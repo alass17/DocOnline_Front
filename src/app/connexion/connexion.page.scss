@@ -1,0 +1,68 @@
+.img{
+    
+    width: 220px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulaire{
+    margin-top: -35px;
+}
+.form-control:hover{
+    box-shadow: none;
+
+}
+.form-control::after{
+    box-shadow: none;
+
+}
+
+label{
+    font-size: 14px;
+
+}
+input{
+    font-size: 14px;
+}
+
+
+.inscription{
+    background-color: #353558;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+   
+    
+    
+}
+.inscription:hover{
+    background-color: #368E8C;
+    color: #FFFFFF;
+   
+}
+
+
+.inscription:active {
+    background-color: #353558;
+    
+    
+  }
+  .inscription{
+    border-radius: 5px;
+    width: 35%;
+    height: 38px;
+    margin-top: 50px;
+    
+  }
+
+  form-floating{
+    box-shadow: none;
+  }
+
+  .textt{
+    font-size: 13px;
+  }
+.mdp{
+    float: right;
+    font-size: 12px;
+}
