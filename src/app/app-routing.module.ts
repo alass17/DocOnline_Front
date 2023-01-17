@@ -4,15 +4,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
 
-  // {
-  //   path: '',
-  //   redirectTo: 'tabs',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'monprofil',
+    pathMatch: 'full'
+  },
   {
 
     
-    path: '',
+    path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -39,6 +39,14 @@ const routes: Routes = [
   {
     path: 'connexion',
     loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
+  },
+  {
+    path: 'detailsdocteurs',
+    loadChildren: () => import('./detailsdocteurs/detailsdocteurs.module').then( m => m.DetailsdocteursPageModule)
+  },
+  {
+    path: 'monprofil',
+    loadChildren: () => import('./monprofil/monprofil.module').then( m => m.MonprofilPageModule)
   }
 ];
 @NgModule({
