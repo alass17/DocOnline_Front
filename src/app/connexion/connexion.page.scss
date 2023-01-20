@@ -1,68 +1,85 @@
-.img{
-    
-    width: 220px;
-    height: 220px;
+
+
+.conneexiontext {
+    margin-top: 80px;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.trait {
+    border-bottom: 5px solid white;
+    width: 35%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.formulaire{
-    margin-top: -35px;
-}
-.form-control:hover{
-    box-shadow: none;
-
-}
-.form-control::after{
-    box-shadow: none;
-
-}
-
-label{
-    font-size: 14px;
-
-}
-input{
-    font-size: 14px;
-}
-
-
-.inscription{
-    background-color: #353558;
-    color: #FFFFFF;
-    margin-bottom: 10px;
-   
-    
-    
-}
-.inscription:hover{
-    background-color: #368E8C;
-    color: #FFFFFF;
-   
-}
-
-
-.inscription:active {
-    background-color: #353558;
-    
-    
-  }
-  .inscription{
-    border-radius: 5px;
-    width: 35%;
-    height: 38px;
+.formulaire {
     margin-top: 50px;
-    
-  }
+    background-color: #F8F6FB;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid white;
+    height: 417px;
+    position: fixed;
+    width: 100%;
+}
 
-  form-floating{
-    box-shadow: none;
-  }
+.formm {
+    margin-top: 50px;
+    padding: 15px;
+}
 
-  .textt{
-    font-size: 13px;
-  }
-.mdp{
+.mdp {
     float: right;
     font-size: 12px;
+    text-align: end;
+}
+
+.textt {
+    font-size: 13px;
+}
+
+
+
+
+
+
+  .inscription{
+    border-radius: 10px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #368E8C;
+    color: white;
+ 
+  
+   
+    
+  }
+
+  .bouton{
+    display: flex;
+    flex-direction: column;
+  }
+label{
+    font-size: 14px !important;
+}
+
+input#floatingInput:hover {
+
+    box-shadow: none;
+}
+
+input#floatingPassword:hover {
+
+    box-shadow: none;
 }

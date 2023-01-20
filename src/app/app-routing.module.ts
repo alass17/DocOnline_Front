@@ -6,13 +6,13 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'monprofil',
+    redirectTo: 'slides',
     pathMatch: 'full'
   },
   {
 
     
-    path: 'tabs',
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -47,7 +47,16 @@ const routes: Routes = [
   {
     path: 'monprofil',
     loadChildren: () => import('./monprofil/monprofil.module').then( m => m.MonprofilPageModule)
-  }
+  },
+  {
+    path: 'profilmodif',
+    loadChildren: () => import('./profilmodif/profilmodif.module').then( m => m.ProfilmodifPageModule)
+  },
+  {
+    path: 'slides',
+    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  
 ];
 @NgModule({
   imports: [

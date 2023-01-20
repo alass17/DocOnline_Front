@@ -1,41 +1,38 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Connexion</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content style="background: #368E8C;">
+  <div class="conneexiontext">
+    <h3> Connexion</h3>
+  <div class="trait">
+  </div>
+   </div>
 
+   <div class="formulaire">
+    <div class="formm">
 
-  
-  <ion-content>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <form class="">
+        <div class="form-floating ">
+          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email ou numéro de téléphone</label>
+        </div>
+       
+        <div class="form-floating ">
+          <input type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Mot de passe</label>
+        </div>
     
     
-    <div class="container">
-      <div class="img">
-        <img src="assets/img/DocOnLigne__1_-removebg-preview.png" alt="">
-      </div>
-  <form class="formulaire">
-      <div class="form-floating ">
-        <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email ou numéro de téléphone</label>
-      </div>
-     
-      <div class="form-floating ">
-        <input type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Mot de passe</label>
-      </div>
-  
-      <div class="mdp mb-3">Mot de passe oublié ?</div>
-  
-    </form>
-    <div class="bouton">
-      <button type="button" class=" inscription mx-auto d-block">Connexion</button>
+
+        <div class="bouton">
+          <div class="mdp mb-3">Mot de passe oublié ?</div>
+
+          <button type="button" class=" inscription"routerLink="/tabs" routerLinkActive="true">Connecter</button>
+        </div>
+      
+        <div class="textt">Vous n'avez pas de compte ? <b style="color: blue;" routerLink="/inscription" routerLinkActive="true">Inscription</b></div>
+      </form> 
+      
     </div>
-  
-    <div class="textt">Vous n'avez pas de compte ? <b style="color: blue;">Inscription</b></div>
-    
-  
-    </div>
+
+   </div>
+   
   </ion-content>
-  
 

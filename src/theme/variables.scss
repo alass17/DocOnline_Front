@@ -234,3 +234,16 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+
+ion-content{
+  // ICI ON BLOCK LE SCROLLING
+  --offset-bottom: auto!important;
+  background: #F8F6FB;
+--overflow: hidden;
+overflow: auto;
+&::-webkit-scrollbar {
+  display: none;
+}
+}
+

@@ -89,3 +89,38 @@ ion-content{
     font-weight:700 !important;
     font-size: 15px !important;
   }
+
+
+  ion-modal {
+    --height: 62%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 12px
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: #353558 ;
+    --color: white;
+  }
+
+
+  ion-list{
+    padding: 12px;
+    margin-top: 38px;
+  }
+
+  .tt {
+    position: fixed;
+  }
+ 
+  .env ion-button{
+    --background: #353558 !important;
+    margin-top: 12px;
+    color: #FFFFFF;
+    border-radius: 12px;
+  }

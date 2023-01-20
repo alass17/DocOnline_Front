@@ -1,0 +1,99 @@
+
+
+  .img{
+   
+ 
+    width: 75px;
+    height: 75px;
+    border: 5px solid #353558;
+    border-radius: 100%;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+   
+  }
+
+  .simg{
+  display: flex;
+  justify-content: center;
+
+  
+  }
+
+  .ajout{
+    text-align: center;
+
+
+  }
+//   .container{
+//     text-align: center;
+//   }
+.row{
+    margin: 10px;
+}
+input:hover{
+    box-shadow: none;
+}
+
+
+
+.iob{
+    border-radius: 10px;
+    border: 1px solid #353558;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 15px ;
+    background: #353558;
+    color: white;
+    
+
+   }
+
+   .iob:hover{
+   
+    background: #368E8C;
+    color: white;
+    border: 2px solid #368E8C;
+    
+   }
+  
+   .IONic{
+     width:25px;
+    height: 25px;
+   }
+
+   .user-avatar {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 3px solid #353558 ;
+    display: flex;
+  }
+  
+  .status-overlay {
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    left: 154px;
+    z-index: 1;
+    padding: 2px;
+    border-radius: 12px;
+  }
+
+  .simg{
+    display: flex;
+    justify-content: center;
+  }
+  input{
+    font-weight: 200 !important;
+    opacity: 0.8;
+  }

@@ -1,68 +1,104 @@
-.img{
-    margin-top:-25px;
-    width: 190px;
-    height: 190px;
+
+
+.conneexiontext {
+    margin-top: 80px;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.trait {
+    border-bottom: 5px solid white;
+    width: 35%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.formulaire{
-    margin-top: -39px;
+.formulaire {
+    margin-top: 20px;
+    background-color: #F8F6FB;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid white;
+    height: 455px;
+    position: fixed;
+    width: 100%;
 }
-.form-control:hover{
-    box-shadow: none;
 
-}
-.form-control::after{
-    box-shadow: none;
-
+.formm {
+    margin-top: 10px;
+    padding: 15px;
 }
 
-
-label{
+.mdp {
+    float: right;
     font-size: 12px;
-
-}
-input{
-    font-size: 12px;
-}
-input#floatingInput,input#floatingPassword {
-    height: 45px;
+    text-align: end;
 }
 
-.inscription{
-    background-color: #353558;
-    color: #FFFFFF;
-    margin-bottom: 10px;
-   
-    
-    
-}
-.inscription:hover{
-    background-color: #368E8C;
-    color: #FFFFFF;
-   
-}
-.bouton{
-    display:flex;
-}
-
-.inscription:active {
-    background-color: #353558;
-    
-    
-  }
-  .inscription{
-    border-radius: 5px;
-    width: 30%;
-    height: 38px;
-    
-  }
-
-  form-floating{
-    box-shadow: none;
-  }
-
-  .textt{
+.textt {
     font-size: 13px;
-  }
+}
+
+
+
+
+
+
+.inscription {
+    border-radius: 10px;
+    border: 1px solid #368E8C;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #368E8C;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+
+
+}
+
+.bouton {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px !important;
+}
+
+.form-floating {
+    height: 45px;
+    margin-bottom: 20px;
+
+}
+
+input#floatingInput {
+    height: 50px;
+
+
+}
+
+input#floatingPassword {
+    height: 50px;
+}
+
+input#floatingInput:hover {
+
+    box-shadow: none;
+}
+
+input#floatingPassword:hover {
+
+    box-shadow: none;
+}

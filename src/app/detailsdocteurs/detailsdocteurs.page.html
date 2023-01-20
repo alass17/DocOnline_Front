@@ -32,6 +32,47 @@
 </div>
 <hr>
 <div class="bouton">
-  <button type="button" class=" inscription mx-auto d-block">Prendre Rdv</button>
+  <button type="button" id="open-modal" class=" inscription mx-auto d-block">Prendre Rdv</button>
 </div>
+
+<!-- <ion-button id="open-modal" expand="block">Open Modal</ion-button> -->
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar class="tt">
+          <ion-title >Prendre rdv</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()"><ion-icon name="close-outline"></ion-icon></ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Docteur</ion-label>
+            <ion-input placeholder="Docteur"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label  position="floating">Date</ion-label>
+            <ion-input type="date" placeholder="Date"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Heure</ion-label>
+            <ion-input placeholder="Heure" type="time"></ion-input>
+          </ion-item>
+       
+            <ion-item>
+              <ion-select interface="popover" placeholder="Objet">
+                <ion-select-option value="apples">Apples</ion-select-option>
+                <ion-select-option value="oranges">Oranges</ion-select-option>
+                <ion-select-option value="bananas">Bananas</ion-select-option>
+              </ion-select>
+            </ion-item>
+          <ion-buttons class="env">
+            <ion-button > Envoyer</ion-button>
+          </ion-buttons>
+            
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
