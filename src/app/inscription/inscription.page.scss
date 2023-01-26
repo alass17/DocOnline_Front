@@ -19,7 +19,7 @@ h3 {
 }
 
 .formulaire {
-    margin-top: 20px;
+    margin-top:50px;
     background-color: #F8F6FB;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -29,6 +29,15 @@ h3 {
     height: 455px;
     position: fixed;
     width: 100%;
+
+    overflow-y: scroll; 
+    height: 420px;
+    --overflow: hidden;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .formm {

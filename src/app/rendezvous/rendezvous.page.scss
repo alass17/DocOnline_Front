@@ -1,0 +1,38 @@
+ion-avatar{
+    width: 30px;
+    height: 30px;
+}
+.divs{
+    display: flex;
+
+
+}
+.noms{
+    padding: 5px;
+    font-size: 16px;
+}
+.trait{
+    border-bottom: 1px solid rgb(176, 168, 168);
+    width: 100%;
+    margin-top:-10px;
+}
+.jh{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 17px;
+    padding-top: 5px;
+
+}
+
+ion-card{
+    border-radius: 15px;
+    width: 80%;
+    height: 120px;
+    border-right: 7px solid #368E8C;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rdv{
+    margin-top: -10px;
+}

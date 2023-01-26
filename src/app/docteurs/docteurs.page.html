@@ -8,12 +8,16 @@
 
  <div class="container">
   
-      <div class="row tout">
-        <div class="first ">
-          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" routerLink="/detailsdocteurs" routerLinkActive="true">
+      <div class="row tout" *ngFor="let prof of professionnels">
+        <div class="first " (click)="goToDetailsDocteur(prof.id)">
+          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" > 
+
+          <!-- routerLink="/detailsdocteurs" routerLinkActive="true" -->
         </div>
         <div class="seconde ">
-          <p class="nom"><b class="dr">Dr Diallo</b><br><b class="bb">Dentiste</b><p>
+          <p class="nom"><b class="dr">Dr {{prof.nom}}</b><br>
+            <b class="bb" *ngFor="let s of prof.specialites">{{s.libelle}}</b>
+          <p>
           <p></p>
 
         </div>
@@ -21,50 +25,7 @@
       </div>
   
 
-      <div class="row tout">
-        <div class="first ">
-          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" >
-        </div>
-        <div class="seconde ">
-          <p class="nom"><b class="dr">Dr Diallo</b><br><b class="bb">Dentiste</b><p>
-          <p></p>
-
-        </div>
-        
-      </div>
-      <div class="row tout">
-        <div class="first ">
-          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" >
-        </div>
-        <div class="seconde ">
-          <p class="nom"><b class="dr">Dr Diallo</b><br><b class="bb">Dentiste</b><p>
-          <p></p>
-
-        </div>
-        
-      </div>
-      <div class="row tout">
-        <div class="first ">
-          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" >
-        </div>
-        <div class="seconde ">
-          <p class="nom"><b class="dr">Dr Diallo</b><br><b class="bb">Dentiste</b><p>
-          <p></p>
-
-        </div>
-        
-      </div>
-      <div class="row tout">
-        <div class="first ">
-          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" >
-        </div>
-        <div class="seconde ">
-          <p class="nom"><b class="dr">Dr Diallo</b><br><b class="bb">Dentiste</b><p>
-          <p></p>
-
-        </div>
-        
-      </div>
+      
       
      
         

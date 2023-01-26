@@ -8,28 +8,60 @@
    <div class="formulaire">
     <div class="formm">
 
-      <form class="">
+      <form #form1="ngForm" class="" *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+     >
         <div class="form-floating ">
-          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email ou numéro de téléphone</label>
+          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="numeroOrEmail"
+          [(ngModel)]="form.numeroOrEmail"
+          required
+          #numeroOrEmail="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && numeroOrEmail.errors }">
+          <label for="numeroOrEmail">Email ou numéro de téléphone</label>
+          <div *ngIf="numeroOrEmail.errors && f.submitted" class="invalid-feedback">
+            Numero ou email obligatoire !
+          </div>
         </div>
        
         <div class="form-floating ">
-          <input type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Mot de passe</label>
+          <input type="password" class="form-control mb-3" id="floatingPassword" placeholder="Password" name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+          <label for="password">Mot de passe</label>
+          <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+            <div *ngIf="password.errors['required']">Mot de passe obligatoire !</div>
+            <div *ngIf="password.errors['minlength']">
+              Le mot de passe doit avoir 6caractères au moins.
+            </div>
+          </div>
         </div>
     
     
 
         <div class="bouton">
-          <div class="mdp mb-3">Mot de passe oublié ?</div>
+          <button >Mot de passe oublié ?</button>
+          
+          <button type="button"   class=" inscription" (click)="onSubmit()" >Connecter</button>
+          
+        </div>
 
-          <button type="button" class=" inscription"routerLink="/tabs" routerLinkActive="true">Connecter</button>
+        <div class="form-group">
+          <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+            Login failed: {{ errorMessage }}
+          </div>
         </div>
       
         <div class="textt">Vous n'avez pas de compte ? <b style="color: blue;" routerLink="/inscription" routerLinkActive="true">Inscription</b></div>
       </form> 
-      
+      <div class="alert alert-success" *ngIf="isLoggedIn">
+        Logged in as {{ roles }}.
+      </div>
     </div>
 
    </div>

@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'slides',
+    redirectTo: 'connexion',
     pathMatch: 'full'
   },
   {
@@ -32,6 +32,7 @@ const routes: Routes = [
     path: 'maps',
     loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
   },
+  
   {
     path: 'inscription',
     loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
@@ -41,7 +42,7 @@ const routes: Routes = [
     loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
-    path: 'detailsdocteurs',
+    path: 'detailsdocteurs/:id',
     loadChildren: () => import('./detailsdocteurs/detailsdocteurs.module').then( m => m.DetailsdocteursPageModule)
   },
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'slides',
     loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  {
+    path: 'inscriptionprof',
+    loadChildren: () => import('./inscriptionprof/inscriptionprof.module').then( m => m.InscriptionprofPageModule)
   },
   
 ];

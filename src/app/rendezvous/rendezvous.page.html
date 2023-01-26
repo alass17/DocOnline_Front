@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>rendezvous</ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-card *ngFor="let rdv of rdvs">
+    <ion-card-header>
+      <div class="divs">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar> <b class="noms"> {{rdv.professionnel.nom}}</b>
+    </div>
+    </ion-card-header>
+  
+    <ion-card-content>
+     <p class="rdv">Rendez-vous</p> 
+    </ion-card-content>
+    <div class="trait"></div>
+    <div class="jh">
+   <div class="jour">
+    <p>{{rdv.jour}}</p>  
+   </div>
+   <div class="heure">
+    <p>{{rdv.heure}}</p>
+   </div>
+    </div>
+
+  </ion-card>
 </ion-content>

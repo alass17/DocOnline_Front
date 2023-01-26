@@ -5,7 +5,7 @@
     </ion-buttons>
     <div class="contient">
     <div class="imgg">
-      <img class="imggg" src="../../assets/img/Rectangle 62.png" alt="" routerLink="/monprofil" routerLinkActive="true" >
+      <img class="imggg" src="../../assets/img/Rectangle 62.png" alt="" routerLink="/monprofil" >
     </div>
   
 <div class="texts">
@@ -14,14 +14,38 @@
 </div>
     <ion-buttons slot="primary">
       <ion-button>
-        <ion-icon class="not" name="notifications-outline"></ion-icon>
+        <ion-icon class="not" name="notifications-outline" ></ion-icon>
         <ion-badge>3</ion-badge>
       </ion-button>
 
       <ion-buttons slot="primary">
-        <ion-button>
-          <i class='bx bx-dots-vertical-rounded'></i>
+        <ion-button id="popover-button">
+          <i class="bi bi-three-dots"></i>
         </ion-button>
+    
+        <ion-popover trigger="popover-button" [dismissOnSelect]="true" class="popUps">
+          <ng-template class="popUp">
+            <ion-content>
+              <ion-list >
+                <ion-item [button]="true" [detail]="false" routerLink="/monprofil" >Mon profil</ion-item>
+                <ion-item  (click)="logout()" >Deconnexion</ion-item>
+                <!-- <button class="deconnexion" (click)="logout()" >Déconnexion</button> -->
+                <!-- <ion-item [button]="true" id="nested-trigger">More options...</ion-item> -->
+    
+                <!-- <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
+                  <ng-template>
+                    <ion-content>
+                      <ion-list>
+                        <ion-item [button]="true" [detail]="false">Nested option</ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover> -->
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+    
       </ion-buttons>
     </ion-buttons>
   </ion-toolbar>

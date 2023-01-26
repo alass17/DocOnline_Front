@@ -1,43 +1,49 @@
-<!-- <ion-header>
- 
-</ion-header> -->
-<ion-toolbar>
-  <ion-icon style="margin-top: 30px;width: 20px;height: 20px;margin-left: 12px;" name="chevron-back-outline"></ion-icon>
-</ion-toolbar>
 
-<ion-content>
-
+<ion-header [translucent]="true">
   
-  <div class="first ">
-    <img class="colimg" src="assets/img/Rectangle 62.png" alt="" >
-  </div>
-  <div class="texte">
-    <h5>Dr Abdoulaye Diallo</h5>
-    <h6>Dentiste</h6>
-  </div>
-  <hr>
-<div class="info">
-  <span> Nom :<b> Diallo</b></span><br>
-  <span> Prenom :<b>Abdoulaye</b></span><br>
-  <span> Email :<b> alassane@gmail.com</b></span><br>
-  <span> Téléphone :<b> 93939393</b></span><br>
-  <span> Profession :<b> Dentiste</b></span>
-</div>
-<hr>
+  <ion-toolbar>
+   
+    <ion-buttons class="BB">
+      <ion-button (click)="back()">
+    <ion-icon name="chevron-back-outline"  ></ion-icon>
+  </ion-button>
+  </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
 
-<div class="biographie">
-  <h5 class="bio">Biographie</h5>
-  <p>Titulaire d’un diplome d’etat de docteur en chirurgie ou en medecine 
-    dentaire dans la plupart des pays</p>
-</div>
-<hr>
-<div class="bouton">
-  <button type="button" id="open-modal" class=" inscription mx-auto d-block">Prendre Rdv</button>
-</div>
+<ion-content [fullscreen]="true">
 
-<!-- <ion-button id="open-modal" expand="block">Open Modal</ion-button> -->
+  <div class="container tout">
+  <div class="avatars">
+  <ion-avatar class="avatar">
+    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  </ion-avatar>
+
+</div>
+<div class="nomtt" >Dr Tiec</div>
+ <div class="info">
+ <!-- <h5> Informations</h5> -->
+ </div>
+<div class="informations">
+  <ion-card>
+ <div class="noms">
+  <div class="tt ttt"> Nom :<b> {{nom}}</b></div>
+  <div class="tt"> Email :<b> {{email}}</b></div>
+  <div class="tt"> Téléphone :<b> {{numero}}</b></div>
+  <div class="tt"> Profession :<b *ngFor="let s of profession" > {{s.libelle}}</b></div>
+  <div class="tt"> Adresse :<b> {{adresse}}</b></div>
+ </div>
+</ion-card>
+
+</div>
+<div class="boutton mx-5" style="margin-top: 25px;">
+  <ion-buttons class="bbbton">
+  <ion-button id="open-modal" expand="block" >Prendre rdv</ion-button>
+  <!-- <ion-button id="open-modal" expand="block">Open Modal</ion-button>  -->
 
   <ion-modal #modal trigger="open-modal">
+    <form action="">
     <ng-template>
       <ion-content>
         <ion-toolbar class="tt">
@@ -46,33 +52,38 @@
             <ion-button color="light" (click)="modal.dismiss()"><ion-icon name="close-outline"></ion-icon></ion-button>
           </ion-buttons>
         </ion-toolbar>
-        <ion-list>
+         <ion-list>
           <ion-item>
-            <ion-label position="floating">Docteur</ion-label>
+            <ion-label position="floating">{{nom}}</ion-label>
             <ion-input placeholder="Docteur"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label  position="floating">Date</ion-label>
-            <ion-input type="date" placeholder="Date"></ion-input>
+            <ion-label  position="floating" >Date</ion-label>
+            <ion-input type="date" name="jour" [(ngModel)]="jour" placeholder="Date"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="floating">Heure</ion-label>
-            <ion-input placeholder="Heure" type="time"></ion-input>
+            <ion-label position="floating" >Heure</ion-label>
+            <ion-input placeholder="Heure"  name="heure"[(ngModel)]="heure" type="time"></ion-input>
           </ion-item>
        
             <ion-item>
-              <ion-select interface="popover" placeholder="Objet">
-                <ion-select-option value="apples">Apples</ion-select-option>
-                <ion-select-option value="oranges">Oranges</ion-select-option>
-                <ion-select-option value="bananas">Bananas</ion-select-option>
+              <ion-select interface="popover" placeholder="Objet" name="objet" [(ngModel)]="obj">
+                <ion-select-option *ngFor="let objetss of objets"  value="{{objetss.idobjet}}" 
+                >{{objetss.libelle}}</ion-select-option>
+               
               </ion-select>
             </ion-item>
           <ion-buttons class="env">
-            <ion-button > Envoyer</ion-button>
+            <ion-button (click)="AjouterRendezVous()" > Envoyer</ion-button>
           </ion-buttons>
             
-        </ion-list>
-      </ion-content>
+        </ion-list> 
+       </ion-content>
     </ng-template>
-  </ion-modal>
+  </form>
+  </ion-modal> 
+</ion-buttons>
+</div>
+</div>
 </ion-content>
+
