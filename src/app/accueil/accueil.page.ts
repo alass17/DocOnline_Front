@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { StorageService } from '../_services/storage/storage.service';
 
 @Component({
   selector: 'app-accueil',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accueil.page.scss'],
 })
 export class AccueilPage implements OnInit {
-
+  user:any
+  id:any
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

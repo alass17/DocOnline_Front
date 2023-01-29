@@ -4,11 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
 
-  {
-    path: '',
-    redirectTo: 'connexion',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'monprofil',
+  //   pathMatch: 'full'
+  // },
   {
 
     
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'accueil',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
+  },
+  {
+    path: 'forgotpassword',
+    loadChildren: () => import('./forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
   },
   
   {
@@ -45,10 +49,12 @@ const routes: Routes = [
     path: 'detailsdocteurs/:id',
     loadChildren: () => import('./detailsdocteurs/detailsdocteurs.module').then( m => m.DetailsdocteursPageModule)
   },
+
   {
     path: 'monprofil',
     loadChildren: () => import('./monprofil/monprofil.module').then( m => m.MonprofilPageModule)
   },
+
   {
     path: 'profilmodif',
     loadChildren: () => import('./profilmodif/profilmodif.module').then( m => m.ProfilmodifPageModule)

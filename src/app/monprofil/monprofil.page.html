@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Mon profil</ion-title>
   </ion-toolbar>
@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="container">
-  <!-- <ion-card>
+  <ion-card>
     <ion-card-header>
     
     </ion-card-header>
@@ -44,17 +44,17 @@
   </ion-buttons>  -->
 
 
-<div class="avtar" >
+<!-- <div class="avtar" >
   <ion-avatar>
     <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
   </ion-avatar>
 </div>
-<!-- <div class="nom" style="text-align: center;">
+<div class="nom" style="text-align: center;">
  <b>Diarraba Diarra</b>  -->
 
   
 <!-- </div> -->
-<div class="row info" >
+<!-- <div class="row info" >
   <div class="nom" style="text-align: center;margin-top: 20px; color: black;">
  <b>Diarraba Diarra</b> </div>
  <div class="information" style="color:black;margin-top: 40px;margin-bottom: 15px;">
@@ -62,22 +62,135 @@
 <p><ion-icon class="tticon1" name="mail"></ion-icon> Email :<b class="nn"> diarra@gmail.com</b> </p> 
 <p><ion-icon class="tticon2" name="call"></ion-icon> Numéro : <b class="nn"> 76767676</b></p>
 <p><ion-icon class="tticon3" name="home"></ion-icon> Adresse : <b class="nn"> Bamako</b></p> 
-</div>
+</div> -->
 
-<ion-buttons >
+<!-- <ion-buttons >
   <ion-button style="margin-bottom: 20px;" routerLink="/profilmodif"routerLinkActive="true">
     <ion-icon name="create-outline"></ion-icon>
     Modifier
   </ion-button>
 </ion-buttons>
-</div>
+</div> -->
   <!-- <ion-item>
     <ion-label >Nom :</ion-label>
     <ion-input  value="Diarra"></ion-input>
-  </ion-item> -->
+  </ion-item>
 
 
 
   
 </div>
+</ion-content> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons class="BB">
+      <ion-button (click)="back()">
+    <ion-icon name="chevron-back-outline"  ></ion-icon>
+    <ion-title>Mon profil</ion-title>
+  </ion-button>
+  </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container d-flex justify-content-center mt-5">
+
+    <div class="card" style="margin-top: -20px; margin-bottom: 10px;">
+
+      <div class="top-container">
+
+        <img src="https://i.imgur.com/G1pXs7D.jpg" class="img-fluid profile-image" width="70">
+
+        <div class="ml-3">
+          <h5 class="name">{{user.nom}}</h5>
+        
+        </div>
+      </div>
+
+
+      <div class="button mt-2 d-flex flex-row align-items-center">
+
+        <button routerLink="/profilmodif" class="btn btn-outline-primary w-100" style="margin-right: 10px;">Modifier</button>
+        <button class="btn btn-danger w-100 ml-2" >Déconnexion</button>
+
+      </div>
+
+
+
+      <!-- <div class="middle-container d-flex justify-content-between align-items-center mt-3 p-2">
+          <div class="dollar-div px-3">
+            
+            <div class="round-div"><i class="fa fa-dollar dollar"></i></div>
+  
+          </div>
+          <div class="d-flex flex-column text-right mr-2">
+            <span class="current-balance">Current Balance</span>
+            <span class="amount"><span class="dollar-sign">$</span>1476</span>
+          </div>
+  
+      </div> -->
+
+      <!-- <div class="recent-border mt-4">
+        <span class="recent-orders">Recent orders</span>
+      </div>
+      <div class="wishlist-border pt-2">
+        <span class="wishlist">Wishlist</span>
+      </div>
+      <div class="fashion-studio-border pt-2">
+        <span class="fashion-studio">Fashion studio</span>
+      </div> -->
+
+      <div class="container" style="margin: 8px;">
+        <div class="divider"><span></span><span>Informations</span><span></span></div>
+        <!-- <div class="row">
+          <h4>Mes auto-evaluations</h4>
+        </div> -->
+        <div class="col-md-8" >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Nom & Prenom</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.nom}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{user.email}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Numéro</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{user.numero}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Adresse</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{user.adresse}}
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 </ion-content>

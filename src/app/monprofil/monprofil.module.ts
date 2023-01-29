@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MonprofilPageRoutingModule } from './monprofil-routing.module';
 
 import { MonprofilPage } from './monprofil.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MonprofilPageRoutingModule
+    MonprofilPageRoutingModule,
+    RouterModule
   ],
   declarations: [MonprofilPage]
 })

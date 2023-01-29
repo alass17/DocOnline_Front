@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 const AUTH_API = 'http://localhost:8080/api/auth/';
 const PATIENT_API = 'http://localhost:8080/patient/';
 const PROF_API = 'http://localhost:8080/prof/signup/';
+const RESET_API = 'http://localhost:8080/api/auth/resetpassword/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -68,5 +69,11 @@ export class AuthService {
     //   );
     const req = new HttpRequest('POST', AUTH_API + 'signout', {}, httpOptions);
     return this.http.request(req);
+  }
+
+  
+  reinitialisermotdepasse(email:string): Observable<any> {
+    
+    return this.http.get(RESET_API + `${email}`);
   }
 }

@@ -64,3 +64,14 @@ ion-modal {
     margin-left: auto;
     margin-right: auto;
   }
+
+  ion-content{
+    // ICI ON BLOCK LE SCROLLING
+    --offset-bottom: auto!important;
+    background: #F8F6FB;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }

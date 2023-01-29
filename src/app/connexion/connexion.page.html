@@ -45,9 +45,10 @@
     
 
         <div class="bouton">
-          <button >Mot de passe oublié ?</button>
+          <div class="mdp mb-3"  routerLink="/forgotpassword">Mot de passe oublié ?</div>
           
-          <button type="button"   class=" inscription" (click)="onSubmit()" >Connecter</button>
+
+          <button type="button" class=" inscription" (click)="onSubmit()" [disabled]="form1.invalid">Connecter</button>
           
         </div>
 

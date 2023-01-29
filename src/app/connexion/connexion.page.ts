@@ -35,7 +35,7 @@ export class ConnexionPage implements OnInit {
     this.authService.connexion(numeroOrEmail, password).subscribe({
       next: data => {
         this.storageService.saveUser(data);
-
+      
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;

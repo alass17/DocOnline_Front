@@ -36,3 +36,13 @@ ion-card{
 .rdv{
     margin-top: -10px;
 }
+ion-content{
+    // ICI ON BLOCK LE SCROLLING
+    --offset-bottom: auto!important;
+    background: #F8F6FB;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }

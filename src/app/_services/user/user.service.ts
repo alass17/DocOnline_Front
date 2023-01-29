@@ -22,7 +22,20 @@ export class UserService {
     return this.http.get(API_URL + 'mod', { responseType: 'text' });
   }
 
+
+
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
+
+
+  getAllUsers(): Observable<any> {
+    return this.http.get(`http://localhost:8080/user/afficher`);
+  }
+
+  getUsersById(id:any):Observable<any>{
+    return this.http.get(`http://localhost:8080/user/t/trouverUserparId/${id}`)
+  }
+
+  
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Docteur } from 'src/app/Classes/docteur/docteur';
@@ -12,6 +12,7 @@ export class DocteursService {
   private baseUrl = 'http://localhost:8080/prof/signup';
 
   private urllll = 'http://localhost:8080/prof/signup/';
+  private url: string = 'http://localhost:8080/prof'
 
   constructor(private http: HttpClient) { }
 
@@ -66,6 +67,19 @@ export class DocteursService {
 
   }
 
+  Modifierprofessionnels(nom:any,imageprofil:File,numero:any,email:any,adresse:any,id:any){
+    const data=new FormData();
+    data.append("nom",nom)
+    data.append("imageprofil",imageprofil)
+    data.append("numero",numero)
+    data.append("email",email)
+    data.append("adresse",adresse)
+  
+
+    return this.http.put(`http://localhost:8080/prof/professionnel/${id}`,data)
+
+  }
+
 
   getAllProfessionnel():Observable<any>{
     return this.http.get("http://localhost:8080/prof/lister")
@@ -78,5 +92,11 @@ export class DocteursService {
 
   createProfessionnel(professionnel: Docteur): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, professionnel);
+  }
+
+
+  modifierProfessionnel(id: number, professionnel: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.put(`${this.url}/professionnel/${id}`, professionnel, { headers });
   }
 }

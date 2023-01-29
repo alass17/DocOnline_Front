@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilmodifPageRoutingModule } from './profilmodif-routing.module';
 
 import { ProfilmodifPage } from './profilmodif.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilmodifPageRoutingModule
+    ProfilmodifPageRoutingModule,
+    RouterModule
   ],
   declarations: [ProfilmodifPage]
 })

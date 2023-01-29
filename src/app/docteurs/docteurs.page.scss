@@ -64,3 +64,13 @@
     font-weight: bold !important  ;
     margin-bottom: 2px;
 }
+ion-content{
+    // ICI ON BLOCK LE SCROLLING
+    --offset-bottom: auto!important;
+    background: #F8F6FB;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }
