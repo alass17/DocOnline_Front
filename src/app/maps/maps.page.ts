@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
 import { Geolocation } from "@ionic-native/geolocation/ngx";
+import { DocteursService } from '../_services/docteur/docteurs.service';
+import { AnySrvRecord } from 'dns';
 
 @Component({
   selector: 'app-maps',
@@ -11,8 +13,10 @@ import { Geolocation } from "@ionic-native/geolocation/ngx";
 })
 export class MapsPage {
   map!:L.Map;
+  professionnels:any
 
-  constructor(private geolocalisation:Geolocation) { }
+
+  constructor(private geolocalisation:Geolocation ,private professionnelService:DocteursService) { }
 
   
    ionViewDidEnter(){
@@ -30,7 +34,27 @@ export class MapsPage {
         const markPoint=L.marker([12.72686,-8.05997],)
   
         this.map.addLayer(markPoint); 
+        
   }
-  
+
+  getProfessionnels() {
+    this.professionnelService.getAllProfessionnel()
+      .subscribe(professionnels => {
+        this.professionnels = professionnels;
+        this.markProfessionnels();
+      });
+  }
+
+  markProfessionnels() {
+    this.professionnels.forEach((professionnel: { latitude: any; longitude: any; }) => {
+      const lat = professionnel.latitude;
+      const lng = professionnel.longitude;
+      const marker = L.marker([lat, lng]);
+      this.map.addLayer(marker)
+    
+
+})
+
+  }
 
 }

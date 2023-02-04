@@ -77,7 +77,7 @@
           </svg>
     Ajouter un document</label>
           <!-- <input id="files" style="visibility:hidden;" type="file" [(ngModel)]="document" na>e="file" value="file" (change)="onFileChange($event)" #fileInput> -->
-          <input type="file" name="document" [(ngModel)]="inscriptionModel.document" (change)="chargeDocument($event) "style="display:none;">
+          <input type="file" [(ngModel)]="inscriptionModel.document" name="document" (change)="chargeDocument($event)">
         </div>
         
 

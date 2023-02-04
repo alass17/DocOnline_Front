@@ -43,4 +43,16 @@ export class RendezVousService {
   getAllRendezVous():Observable<any>{
     return this.http.get(`http://localhost:8080/rendezvous/afficher`)
   }
+
+  getMyRendezVous(id_patient:Number):Observable<any>{
+    return this.http.get(`http://localhost:8080/rendezvous/mesrendezvous/${id_patient}`)
+
+  }
+
+
+getAllPatientForProfessinnel(professionnelId:any){
+  return this.http.get(`http://localhost:8080/rendezvous/patients/${professionnelId}`)
+
+}
+
 }

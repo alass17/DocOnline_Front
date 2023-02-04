@@ -1,4 +1,4 @@
-<ion-content style="background: #368E8C;">
+<ion-content >
   <div class="conneexiontext">
     <h3> Inscription</h3>
     <div class="trait">
@@ -8,12 +8,12 @@
   <div class="formulaire">
     <div class="formm">
 
-      <form class="" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <form class="" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
         <div class="form-floating ">
           <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="nom"
-            [(ngModel)]="form.nom" required minlength="3" maxlength="20" #nom="ngModel"
+            [(ngModel)]="formInscription.nom" required  minlength="3" maxlength="20" #nom="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && nom.errors }"><div class="invalid-feedback" *ngIf="nom.errors && f.submitted">
-              <div *ngIf="nom.errors['required']">nom is required</div>
+              <div *ngIf="nom.errors['required']">Le nom est obligatoire</div>
               <div *ngIf="nom.errors['minlength']">
                 Le nom doit contenir au moins 3 caractères
               </div>
@@ -21,41 +21,67 @@
                 Le nom doit contenir au plus 20 caractères
               </div>
             </div>
-          <label for="nom">Nom</label>
+          <label for="nom">Nom *</label>
+          
+        </div>
+
+        <div class="form-floating ">
+          <input type="file" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="imageprofil"
+            [(ngModel)]="formInscription.imageprofil" (change)="chargeImageProfil($event)">
+              
+          <label for="nom">Profil</label>
+          
+        </div>
+
+        <div class="form-floating ">
+          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="numero"
+            [(ngModel)]="formInscription.numero" required  minlength="8" maxlength="20" #numero="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && numero.errors }"><div class="invalid-feedback" *ngIf="numero.errors && f.submitted">
+              <div *ngIf="numero.errors['required']">Le nom est obligatoire</div>
+              <div *ngIf="numero.errors['minlength']">
+                Le numero doit contenir au moins 8 caractères
+              </div>
+              <div *ngIf="numero.errors['maxlength']">
+                Le numero doit contenir au plus 20 caractères
+              </div>
+            </div>
+          <label for="nom">Numero *</label>
           
         </div>
 
 
-        <div class="form-floating">
+        <!-- <div class="form-floating">
           <input type="text" class="form-control " id="floatingPassword" placeholder="Numero de téléphone" name="numero"
-            [(ngModel)]="form.numero" required minlength="3" maxlength="20" #numero="ngModel"
+            [(ngModel)]="formInscription.numero" required minlength="8" maxlength="20" #numero="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && numero.errors }">  <div class="invalid-feedback" *ngIf="numero.errors && f.submitted">
               <div *ngIf="numero.errors['required']">Le numero est obligatoire</div>
-              <div *ngIf="numero.errors['minlength']">Le numero doit avoir plus de 3 caractères</div>
+              <div *ngIf="numero.errors['minlength']">Le numero doit avoir plus de 8 caractères</div>
   
             </div>
-          <label for="numero">Numero de téléphone</label>
+          <label for="numero">Numero de téléphone
+
+          </label>
 
         
-        </div>
+        </div> -->
 
         <div class="form-floating">
           <input type="email" class="form-control " id="floatingPassword" placeholder="Entrer un email" name="email"
-            [(ngModel)]="form.email" required email #email="ngModel"
+            [(ngModel)]="formInscription.email" required email #email="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && email.errors }"><div class="invalid-feedback" *ngIf="email.errors && f.submitted">
               <div *ngIf="email.errors['required']">L'email est obligatoire</div>
               <div *ngIf="email.errors['email']">
                 Entrer un e-mail valide.
               </div>
             </div>
-          <label for="email">Email</label>
+          <label for="email">Email *</label>
 
           
         </div>
 
         <div class="form-floating ">
           <input type="password" class="form-control " id="floatingPassword" placeholder="Password" name="password"
-            [(ngModel)]="form.password" required minlength="6" #password="ngModel"
+            [(ngModel)]="formInscription.password" required minlength="6" #password="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
             <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
               <div *ngIf="password.errors['required']">Mot de passe obligatoire</div>
@@ -63,41 +89,41 @@
                 Le mot de passe doit avoir au moins 6 caractères.
               </div>
             </div>
-          <label for="floatingPassword">Mot de passe</label>
+          <label for="floatingPassword">Mot de passe *</label>
           
         </div>
 
         <div class="form-floating ">
           <input type="text" class="form-control " id="floatingPassword" placeholder="Confirmer le mot de passe"
-            name="confirmpassword" [(ngModel)]="form.confirmpassword" required confirmpassword
+            name="confirmpassword" [(ngModel)]="formInscription.confirmpassword" required confirmpassword
             #confirmpassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmpassword.errors }"><div class="invalid-feedback" *ngIf="confirmpassword.errors && f.submitted">
               <div *ngIf="confirmpassword.errors['required']">Password is required</div>
               <div *ngIf="confirmpassword.errors['confirmpassword']">
                 Les mots de passe ne sont pas les mêmes.
               </div>
             </div>
-          <label for="confirmpassword">Confirmer</label>
+          <label for="confirmpassword">Confirmer *</label>
           
         </div>
 
         <div class="form-floating ">
           <input type="text" class="form-control " id="floatingPassword" placeholder="Adresse" name="adresse"
-            [(ngModel)]="form.adresse" required #adresse="ngModel"
+            [(ngModel)]="formInscription.adresse" required #adresse="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && adresse.errors }"><div class="invalid-feedback" *ngIf="adresse.errors && f.submitted">
               <div *ngIf="adresse.errors['required']">L'adresse est obligatoire</div>
   
             </div>
-          <label for="adresse">Adresse</label>
+          <label for="adresse">Adresse *</label>
 
           
         </div>
 
         <div class="bouton">
-          <button type="button" class=" inscription" (click)="onSubmit()">Inscrire</button>
+          <button type="submit" class=" inscription" (click)="CreerComptePatient()">Inscrire</button>
         </div>
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        <!-- <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
           Signup failed!<br />{{ errorMessage }}
-        </div>
+        </div> -->
 
         <div class="textt">Vous avez déjà un compte ? <b style="color: blue;" routerLink="/connexion"
             routerLinkActive="true">Connexion</b></div>

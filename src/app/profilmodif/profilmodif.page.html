@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
   <div class="container user-avatar">
     <label for="files" class="Fimg">
@@ -25,20 +26,31 @@
   </label>
   <input id="files" style="visibility:hidden;" type="file">
     </div>
+
+    <ion-segment [(ngModel)]="informations">
+      <ion-segment-button value="information">
+        <ion-label>Informations</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="motdepasse">
+        <ion-label>Mot de passe</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   
-  <form>
+    <div class="divprincipal"  [ngSwitch]="informations">
+      <ion-list *ngSwitchCase="'information'">
+  <form >
     <div class="row">
         <label for="formGroupExampleInput">Nom</label>
-        <input type="text" [(ngModel)]="modif.nom" name="nom" value="{{user.nom}}" class="form-control" placeholder="Nom complet">
+        <input type="text" ngModel="{{user.nom}}" [(ngModel)]="modif.nom" name="nom" class="form-control" placeholder="Nom complet">
       </div>
       <div class="row">
         <label for="formGroupExampleInput">Email</label>
-        <input type="text" [(ngModel)]="modif.email" name="email" value="diarra@gmail.com" class="form-control" placeholder="Adresse e-mail">
+        <input type="text" ngModel="{{ user.email }}" [(ngModel)]="modif.email" name="email"  class="form-control" placeholder="Adresse e-mail">
       </div>
 
       <div class="row">
         <label for="formGroupExampleInput">Numéro</label>
-        <input type="text"  [(ngModel)]="modif.numero" name="numero" value="657676868" class="form-control" placeholder="Numéro de téléphone">
+        <input type="text" id= "numero" [(ngModel)]="modif.numero" name="numero" class="form-control" placeholder="Numéro de téléphone">
       </div>
 
       <div class="row">
@@ -52,4 +64,35 @@
         </ion-button>
       </ion-buttons>
   </form>
+</ion-list>
+
+<ion-list *ngSwitchCase="'motdepasse'">
+<form>
+
+  <div class="row">
+    <label for="formGroupExampleInput">Actuel mot de passe</label>
+    <input type="text" ngModel="{{ user.email }}" [(ngModel)]="modif1.currentpassword" name="currentpassword"  class="form-control" placeholder="Adresse e-mail">
+  </div>
+
+  <div class="row">
+    <label for="formGroupExampleInput">Nouveau mot de passe</label>
+    <input type="text" id= "numero" [(ngModel)]="modif1.newpassword" name="newpassword" class="form-control" placeholder="Numéro de téléphone">
+  </div>
+
+  <div class="row">
+    <label for="formGroupExampleInput">Confirmer</label>
+    <input type="text" [(ngModel)]="modif1.confirmpassword" name="confirmpassword"  class="form-control" placeholder="Adresse">
+  </div>
+
+  <ion-buttons >
+    <ion-button class="iob" style="margin-bottom: 20px;" (click)="ModifierMotdepasse()">
+      
+      Enregistrer
+    </ion-button>
+  </ion-buttons>
+
+</form>
+
+</ion-list>
+</div>
 </ion-content>

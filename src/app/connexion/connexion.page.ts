@@ -27,6 +27,7 @@ export class ConnexionPage implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
     }
+    
   
   }
   onSubmit(): void {
@@ -39,9 +40,9 @@ export class ConnexionPage implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
-        //this.reloadPage();
+        // this.reloadPage();
         
-        this.route.navigateByUrl("/tabs/accueil");
+        this.route.navigateByUrl("/tabsmedecin/accueil");
       },
       error: err => {
         this.errorMessage = err.error.message;

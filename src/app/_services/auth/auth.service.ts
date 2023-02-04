@@ -28,11 +28,12 @@ export class AuthService {
     );
   }
 
-  inscription(nom: string,numero:string,email:string,password: string,confirmpassword: string, adresse: string): Observable<any> {
+  inscription(nom: string,imageprofil:File,numero:string,email:string,password: string,confirmpassword: string, adresse: string): Observable<any> {
     return this.http.post(
       PATIENT_API + 'signup',
       {
         nom,
+        imageprofil,
         numero,
         email,
         password,
@@ -75,5 +76,23 @@ export class AuthService {
   reinitialisermotdepasse(email:string): Observable<any> {
     
     return this.http.get(RESET_API + `${email}`);
+  }
+
+
+
+  ChangerMdp(currentpassword:any,newpassword:any, confirmpassword:any):Observable<any>{
+    // let data = new FormData();
+    // data.append("jour",jourRdv)
+    // data.append("heure",heureRdv)
+    // data.append("objetRdv",objetRdv)
+    const data={
+      "currentpassword":currentpassword,
+      "newpassword":newpassword, 
+      "confirmpassword":confirmpassword   
+    }
+  
+  
+    return this.http.post(`http://localhost:8080/api/auth/changePassword`,data);
+
   }
 }

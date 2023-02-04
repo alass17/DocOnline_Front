@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="margin-left:-10px">Prendre rendez-vous</ion-title>
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+        <ion-icon name="chevron-back-outline" ></ion-icon>
+      </ion-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- <div class="col-md-6"> -->
+    <!-- <div class="well-block"> -->
+    <!-- <div class="well-title">
+                <h3>Prenez rendez-vous</h3>
+            </div> -->
+    <div *ngIf="popupResult" class="alert alert-success" role="alert">
+      {{popupMessage}}
+    </div>
+    <div *ngIf="popupResult == false" class="alert alert-danger" role="alert">
+      {{popupMessage}}
+    </div>
+    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && sendAppointment()" novalidate class="feedback-form">
+      <br>
+      <!-- Form start -->
+      <div class="contenu ">
+
+        <!-- Select Doctor -->
+        <!-- <div class="col-md-12"> -->
+        <div class=" mb-2" >
+          <ion-label for="appointmentfor">Medecin</ion-label>
+          <!-- 
+                            <select id="medecin" 
+                                    name="medecin" 
+                                    class="form-control" 
+                                    [(ngModel)]="availabilityData.medecinId"
+                                    #medecin="ngModel"
+                                    (change)="toDay(availabilityData.medecinId)"
+                                    required aria-required="true"
+                                    >
+                                    <option selected disabled>Merci de choisir un medecin</option>
+                                    <option *ngFor="let medecin of medecins" [value]=medecin.id >Dr. {{medecin.nom}}</option>
+                            </select> -->
+          
+            <select  id="medecin" name="medecin" class="form-control"
+              [(ngModel)]="availabilityData.medecinId" #medecin="ngModel" (change)="toDay(availabilityData.medecinId)"
+              required aria-required="true">
+              <option selected disabled>Merci de choisir un medecin</option>
+              <option *ngFor="let medecin of medecins" value="{{medecin.id}}">Dr.
+                {{medecin.nom}}</option>
+
+            </select>
+        
+
+          <div *ngIf="f.submitted && medecin.touched && medecin.invalid" class="invalid-input">
+            <div style="color: red">Champ obligatoire</div>
+            <!-- <div *ngIf="date.errors?.minlength" style="color: red">Champ obligatoire</div> -->
+          </div>
+
+          <!-- input validation group -->
+          <small class="text-danger" [class.d-none]="f.submitted || (medecin.valid || medecin.touched)">Merci de choisir
+            un medecin</small>
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-select interface="popover" placeholder="Objet" name="objet" [(ngModel)]="obj">
+          <ion-select-option *ngFor="let objetss of objets"
+            value="{{objetss.idobjet}}">{{objetss.libelle}}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+      <!-- Text input-->
+
+      <div class="col text-center " style="margin-top: 10px;">
+        <label class="control-label" for="date">Choisir une date</label>
+
+        <div class="input-group d-flex justify-content-center">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-light" (click)="previousDate(availabilityRequest.date)"><ion-icon name="chevron-back"></ion-icon></button>
+          </span>
+          <h1>{{ availabilityRequest.date }}</h1>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-light" (click)="nextDay(availabilityRequest.date)"><ion-icon name="chevron-forward"></ion-icon></button>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="">
+        <ion-card>
+          <h6>Liste de disponibilité pour : {{ availabilityRequest.date }}</h6>
+          <div class="col-md-12">
+            <div *ngFor="let availability1 of availabilities">
+              <div class="inputGroup">
+                <input type="radio" name="radio" id="radio{{availability1.id}}" [(ngModel)]="availabilityData.shiftTimeId"
+                  value="{{availability1.id}}" [disabled]="availability1.available ===false" required />
+                <label for="radio{{availability1.id}}"
+                  [class.strikethrough]="availability1.available ===false">{{availability1.fuseauHoraire}}
+                  {{(availability1.available===false)? '(Réservé)':''}}</label>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+
+
+
+      <!-- Button -->
+      <div class="col-md-12">
+        <div class="form-group bouton">
+          <!-- <button id="singlebutton" name="singlebutton" class="btn btn-default">Make An Appointment</button> -->
+          <button type="submit" class="btn btn-block mb-3 bbtn"><ion-icon name="calendar" style="font-size: 20px"></ion-icon> Prendre rendez-vous</button>
+
+        </div>
+      </div>
+    </form>
+    <!-- form end -->
+  </div>
+
+  
+
+</ion-content>

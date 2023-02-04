@@ -2,7 +2,7 @@ import { Specialite } from "../specialite/specialite";
 
 
 export class Docteur {
-    
+        id: any;
         nom!: string;
         imageprofil!: File;
         numero!: string;
@@ -12,6 +12,7 @@ export class Docteur {
         adresse!: string;
         document !: File;
         specialites!: Specialite;
+        
 
        
         

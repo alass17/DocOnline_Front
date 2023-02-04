@@ -48,15 +48,16 @@
           <div class="mdp mb-3"  routerLink="/forgotpassword">Mot de passe oublié ?</div>
           
 
-          <button type="button" class=" inscription" (click)="onSubmit()" [disabled]="form1.invalid">Connecter</button>
+          <button type="submit" class=" inscription" (click)="onSubmit()" >Connecter</button>
+          <!-- [disabled]="form1.invalid" -->
           
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
             Login failed: {{ errorMessage }}
           </div>
-        </div>
+        </div> -->
       
         <div class="textt">Vous n'avez pas de compte ? <b style="color: blue;" routerLink="/inscription" routerLinkActive="true">Inscription</b></div>
       </form> 

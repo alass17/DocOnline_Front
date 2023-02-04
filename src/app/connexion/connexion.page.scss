@@ -26,7 +26,7 @@ h3 {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 1px solid white;
-    height: 417px;
+    height: 510px ;
     position: fixed;
     width: 100%;
 }
@@ -44,6 +44,7 @@ h3 {
 
 .textt {
     font-size: 13px;
+    text-align: center;
 }
 
 
@@ -66,6 +67,18 @@ h3 {
     
   }
 
+  .inscription:active{
+   
+    background-color: #368E8C;
+    color: white;
+  }
+
+  .inscription:hover{
+   
+    background-color: #353558;
+    color: white;
+  }
+
   .bouton{
     display: flex;
     flex-direction: column;
@@ -83,6 +96,8 @@ input#floatingPassword:hover {
 
     box-shadow: none;
 }
+
+
 
 ion-content{
     // ICI ON BLOCK LE SCROLLING

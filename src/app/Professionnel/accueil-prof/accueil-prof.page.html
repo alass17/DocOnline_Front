@@ -1,0 +1,118 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>accueilProf</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+
+  <div class="tt">
+    <div class="entete">
+    <div class="haut">
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    
+  </div>
+  <div class="droite">
+  <ion-buttons slot="primary">
+    <ion-button>
+      <ion-icon class="not" name="notifications-outline" ></ion-icon>
+      <ion-badge>3</ion-badge>
+    </ion-button>
+
+    <ion-buttons slot="primary">
+      <ion-button id="popover-button">
+        <i class="bi bi-three-dots"></i>
+      </ion-button>
+  
+      <ion-popover trigger="popover-button" [dismissOnSelect]="true" class="popUps">
+        <ng-template class="popUp">
+          <ion-content>
+            <ion-list >
+              <ion-item routerLink ="/profilprof">Mon profil</ion-item>
+              <ion-item  (click)="logout()" >Deconnexion</ion-item>
+              <!-- <button class="deconnexion" (click)="logout()" >Déconnexion</button> -->
+              <!-- <ion-item [button]="true" id="nested-trigger">More options...</ion-item> -->
+  
+              <!-- <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
+                <ng-template>
+                  <ion-content>
+                    <ion-list>
+                      <ion-item [button]="true" [detail]="false">Nested option</ion-item>
+                    </ion-list>
+                  </ion-content>
+                </ng-template>
+              </ion-popover> -->
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+  
+    </ion-buttons>
+  </ion-buttons>
+</div>
+</div>
+    <div class="bien">
+      <h3>Bienvenue !!</h3>
+       <h4>Tiec</h4>
+    </div>
+
+  </div>
+  <div class="container blanc">
+
+    <div class="row mesgrid">
+      
+        <div class="col colonne" >
+          <ion-icon  name="person-sharp" class="ttt"></ion-icon>
+          <p class="nbre">5</p>
+          <h6 class="texte">Patients</h6>
+        </div>
+     
+
+      <div class="col colonne">
+        <div>
+          <ion-icon name="calendar" class="ttt"></ion-icon>
+          <p class="nbre">5</p>
+          <h6 class="texte">Rdvs</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="div1"style="margin-top:10px">
+     <b>Mes rendez-vous</b> <b style="float: right;color: blue;font-size: 12px;">Voir plus</b> 
+    </div>
+
+    <ion-slides [options]="mesSlides">
+
+
+      <ion-slide >
+        <ion-card >
+          <ion-card-header>
+            <div class="divs">
+            <ion-avatar>
+              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            </ion-avatar> <b class="noms">Diarra</b>
+          </div>
+          </ion-card-header>
+        
+          <ion-card-content>
+           <p class="rdv">Rendez-vous</p> 
+          </ion-card-content>
+          <div class="trait"></div>
+          <div class="jh">
+         <div class="jour">
+          <p>20:11/11</p>  
+         </div>
+         <div class="heure">
+          <p>14:00</p>
+         </div>
+          </div>
+      
+        </ion-card>
+      </ion-slide>
+
+
+    </ion-slides>
+
+  </div>
+<ion-content></ion-content>

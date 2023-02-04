@@ -1,15 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
-import { AuthService } from '../_services/auth/auth.service';
-import { DocteursService } from '../_services/docteur/docteurs.service';
+
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
-import { Docteur } from '../Classes/docteur/docteur';
-import { SpecialiteService } from '../_services/specialite/specialite.service';
-import { Specialite } from '../Classes/specialite/specialite';
+import { SpecialiteService } from 'src/app/_services/specialite/specialite.service';
+import { DocteursService } from 'src/app/_services/docteur/docteurs.service';
 
 @Component({
   selector: 'app-inscriptionprof',
@@ -20,17 +18,7 @@ export class InscriptionprofPage implements OnInit {
 
 specialites:any
   professionnel:any
-  form: any = {
-    nom: null,
-    numero: null,
-    email: null,
-    password: null,
-    confirmpassword: null,
-    adresse: null,
-    document:null,
-    idspec: null,
-    imageprofil:null
-  };
+  
 
   inscriptionModel:any={
     nom:null,

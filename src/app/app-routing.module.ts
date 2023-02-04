@@ -6,7 +6,7 @@ const routes: Routes = [
 
   // {
   //   path: '',
-  //   redirectTo: 'monprofil',
+  //   redirectTo: 'prendrerdv',
   //   pathMatch: 'full'
   // },
   {
@@ -65,7 +65,27 @@ const routes: Routes = [
   },
   {
     path: 'inscriptionprof',
-    loadChildren: () => import('./inscriptionprof/inscriptionprof.module').then( m => m.InscriptionprofPageModule)
+    loadChildren: () => import('./Professionnel/inscriptionprof/inscriptionprof.module').then( m => m.InscriptionprofPageModule)
+  },
+  {
+    path: 'prendrerdv',
+    loadChildren: () => import('./prendrerdv/prendrerdv.module').then( m => m.PrendrerdvPageModule)
+  },
+  {
+    path: 'accueil-prof',
+    loadChildren: () => import('./Professionnel/accueil-prof/accueil-prof.module').then( m => m.AccueilProfPageModule)
+  },
+  {
+    path: 'tabsmedecin',
+    loadChildren: () => import('./Professionnel/tabsmedecin/tabsmedecin.module').then( m => m.TabsmedecinPageModule)
+  },
+  {
+    path: 'rendezvousprof',
+    loadChildren: () => import('./Professionnel/rendezvousprof/rendezvousprof.module').then( m => m.RendezvousprofPageModule)
+  },
+  {
+    path: 'profilprof',
+    loadChildren: () => import('./Professionnel/profilprof/profilprof.module').then( m => m.ProfilprofPageModule)
   },
   
 ];
