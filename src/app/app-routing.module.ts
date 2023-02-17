@@ -4,15 +4,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
 
-  // {
-  //   path: '',
-  //   redirectTo: 'prendrerdv',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'connexion',
+    pathMatch: 'full'
+  },
   {
 
     
-    path: '',
+    path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -86,6 +86,24 @@ const routes: Routes = [
   {
     path: 'profilprof',
     loadChildren: () => import('./Professionnel/profilprof/profilprof.module').then( m => m.ProfilprofPageModule)
+  },
+
+  {
+    path: 'modifprofilprof',
+    loadChildren: () => import('./Professionnel/modifprofilprof/modifprofilprof.module').then( m => m.ModifprofilprofPageModule)
+  },
+  {
+    path: 'detailspatients',
+    loadChildren: () => import('./Professionnel/detailspatients/detailspatients.module').then( m => m.DetailspatientsPageModule)
+  },
+ 
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'rdvdetails/:id',
+    loadChildren: () => import('./rdvdetails/rdvdetails.module').then( m => m.RdvdetailsPageModule)
   },
   
 ];

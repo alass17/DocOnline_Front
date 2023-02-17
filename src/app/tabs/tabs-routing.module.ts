@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       
@@ -23,19 +23,21 @@ const routes: Routes = [
       {
         path: 'maps',
         loadChildren: () => import('../maps/maps.module').then( m => m.MapsPageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/accueil',
-        pathMatch: 'full'
       }
+      // ,
+      // {
+      //   path: '',
+      //   redirectTo: '/tabs/accueil',
+      //   pathMatch: 'full'
+      // }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/accueil',
-    pathMatch: 'full'
   }
+  // ,
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/accueil',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({

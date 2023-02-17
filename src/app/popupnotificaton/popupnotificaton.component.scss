@@ -1,0 +1,49 @@
+// .marg{
+//     margin-top: auto;
+//     margin-bottom: auto;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+img{
+    // margin-top: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+.avat
+{
+    margin-top: -5px;
+   // margin-left: -10px;
+}
+
+ion-card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
+    border: 1px solid rgb(226, 218, 218);
+}
+
+.tous{
+    display: flex;
+    margin-top: -10px;
+    gap: 5px;
+
+}
+
+.nom{
+    margin-top: 8px !important;
+}
+// .tout{
+//     display: grid;
+//     grid-template-columns: auto auto;
+    
+// }
+
+.colmarg{
+    // margin-left: -35px;
+    width: 90%;
+   
+}

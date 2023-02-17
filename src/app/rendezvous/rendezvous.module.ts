@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { RendezvousPageRoutingModule } from './rendezvous-routing.module';
 
 import { RendezvousPage } from './rendezvous.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RendezvousPageRoutingModule
+    RendezvousPageRoutingModule,
   ],
   declarations: [RendezvousPage]
 })

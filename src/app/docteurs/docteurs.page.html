@@ -7,24 +7,26 @@
 <ion-content>
 
  <div class="container">
-  
-      <div class="row tout" *ngFor="let prof of professionnels">
-        <div class="first " (click)="goToDetailsDocteur(prof.id)">
-          <img class="colimg" src="assets/img/Rectangle 62.png" alt="" > 
+  <ion-card  *ngFor="let prof of professionnels">
+      <div class="row tt">
+       
+        <div class="col first " (click)="goToDetailsDocteur(prof.id)">
+          
+          <img class="colimg" src="../../assets/img/{{prof.imageprofil}}" alt="" > 
 
           <!-- routerLink="/detailsdocteurs" routerLinkActive="true" -->
         </div>
-        <div class="seconde ">
+        <div class="col seconde ">
           <p class="nom"><b class="dr">Dr {{prof.nom}}</b><br>
             <b class="bb" *ngFor="let s of prof.specialites">{{s.libelle}}</b>
           <p>
           <p></p>
 
         </div>
-        
+      
       </div>
   
-
+    </ion-card>
       
       
      

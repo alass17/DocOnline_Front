@@ -8,6 +8,13 @@ import { Docteur } from 'src/app/Classes/docteur/docteur';
 })
 export class DocteursService {
 
+  private BASE_URL = 'http://localhost:8080/api/private';
+  private BASE_URL1 = 'http://localhost:8080/prof';
+  
+  private CALENDAR_EVENTS_URL = `${this.BASE_URL1}\\events\\daily`;
+  private DELETE_EVENT_URL = `${this.BASE_URL1}/events/`;
+  private CHANGE_EVENT_STATUS_URL = `${this.BASE_URL1}/events/status/`;
+
   api="http://localhost:8080";
   private baseUrl = 'http://localhost:8080/prof/signup';
 
@@ -98,5 +105,28 @@ export class DocteursService {
   modifierProfessionnel(id: number, professionnel: any): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put(`${this.url}/professionnel/${id}`, professionnel, { headers });
+  }
+
+  // :::::::::::::::::::::::Delete:::::::::::::::::::::::::
+  DeletePatient(id_patient:number):Observable<any>{
+  
+    
+    return this.http.delete(`${this.api}/patient/delete/${id_patient}`)
+  }
+
+
+
+  calendarEvent(calendarRequest: any): Observable<any> {
+    return this.http.post(this.CALENDAR_EVENTS_URL, calendarRequest);
+  }
+
+  // Delete Event
+  deleteEvent(appointmentId: number): Observable<any> {
+    return this.http.delete(this.DELETE_EVENT_URL + appointmentId);
+  }
+
+  // Change Event Status
+  changeEventStatus(appointmentId: number): Observable<any> {
+    return this.http.post(this.CHANGE_EVENT_STATUS_URL + appointmentId, {});
   }
 }

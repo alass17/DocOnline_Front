@@ -1,0 +1,55 @@
+<ion-content class="ion-padding">
+
+<div class="div" *ngIf="role=='ROLE_PATIENT'">
+  <ion-card *ngFor="let notif of notifications ">
+    <div (click)="markAsRead(notif)" *ngIf="!notif.isRead">
+    
+    <ion-card-content>
+      
+      <div class="tous">
+          <img src="../../assets/img/5edbc627ff214417f0a4f3dda15d5156.jpg" alt="">
+          <h4 class="nom">{{user.nom}} </h4>
+        </div>
+     
+        <div class="pp">
+          <p class="paragraphe">{{notif.message}}</p>
+        </div>
+        
+        <!-- <div class="col-2">
+
+        </div> -->
+     
+     
+    </ion-card-content>
+  </div>
+  </ion-card>
+
+</div>
+
+
+<div class="div" *ngIf="role=='ROLE_PROFESSIONNEL'">
+  <ion-card *ngFor="let notif of notificationsprof ">
+    <div (click)="markAsRead(notif)" *ngIf="!notif.isRead">
+    
+    <ion-card-content>
+      
+      <div class="tous">
+          <img src="../../assets/img/5edbc627ff214417f0a4f3dda15d5156.jpg" alt="">
+          <h4 class="nom">{{user.nom}} </h4>
+        </div>
+     
+        <div class="pp">
+          <p class="paragraphe">{{notif.message}}</p>
+        </div>
+        
+        <!-- <div class="col-2">
+
+        </div> -->
+     
+     
+    </ion-card-content>
+  </div>
+  </ion-card>
+
+</div>
+</ion-content>

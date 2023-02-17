@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Console } from 'console';
 import { AuthService } from '../_services/auth/auth.service';
 import { StorageService } from '../_services/storage/storage.service';
 
@@ -10,7 +11,7 @@ import { StorageService } from '../_services/storage/storage.service';
   styleUrls: ['./connexion.page.scss'],
 })
 export class ConnexionPage implements OnInit {
-  form1!:FormGroup;
+  form1!: FormGroup;
   form: any = {
     numeroOrEmail: null,
     password: null
@@ -18,17 +19,17 @@ export class ConnexionPage implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
-  roles: string[] = [];
+  roles: any = [];
 
-  constructor(private authService: AuthService, private storageService: StorageService,private route:Router) { }
+  constructor(private authService: AuthService, private storageService: StorageService, private route: Router) { }
 
   ngOnInit() {
-    if (this.storageService.isLoggedIn()) {
-      this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
-    }
-    
-  
+    // if (this.storageService.isLoggedIn()) {
+    //   this.isLoggedIn = true;
+    //   this.roles = this.storageService.getUser().roles;
+    // }
+
+
   }
   onSubmit(): void {
     const { numeroOrEmail, password } = this.form;
@@ -36,18 +37,25 @@ export class ConnexionPage implements OnInit {
     this.authService.connexion(numeroOrEmail, password).subscribe({
       next: data => {
         this.storageService.saveUser(data);
-      
+
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.storageService.getUser().roles;
-        // this.reloadPage();
-        
-        this.route.navigateByUrl("/tabsmedecin/accueil");
+         this.roles = this.storageService.getUser().roles;
+       // this.reloadPage();
+        console.log(this.roles[0])
+        if (this.roles[0]=='ROLE_PROFESSIONNEL') {
+          
+          
+          this.route.navigate(['/tabsmedecin/accueil-prof']);
+        }else if(this.roles[0]=='ROLE_PATIENT'){
+            this.route.navigate(['/tabs/accueil']);
+          }
       },
       error: err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
+      
     });
   }
 

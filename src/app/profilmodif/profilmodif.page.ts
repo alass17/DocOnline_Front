@@ -15,40 +15,48 @@ import { UserService } from '../_services/user/user.service';
 export class ProfilmodifPage implements OnInit {
   modifs:any
   informations:string="information"
-  modif: any = {
-    nom: null,
-    numero: null,
-    email: null,
-    password: null,
-    confirmpassword: null,
-    adresse: null,
-  };
+ 
 
-  modif1: any = {
-    currentpassword: null,
-    newpassword: null,
-    confirmpassword: null,
-    
-  };
+  modif1:any
 
   
 
   imageprofil:any
   user:any
   modifpatients:any
+  modif:any
 
   professionnel!: Docteur;
   id!: number;
   changer: any;
   constructor(private storage :StorageService,private userService:UserService,
     private route:  ActivatedRoute,private professionnelService:DocteursService,
-    private patientService:PatientService,private authService:AuthService) { }
+    private patientService:PatientService,private authService:AuthService) { 
+      this.user = this.storage.getUser();
+        
+      this.modif = {
+        nom: this.user.nom,
+        numero: this.user.numero,
+        email: this.user.email,
+        password: null,
+        confirmpassword: null,
+        adresse: this.user.adresse,
+      };
 
-  ngOnInit() {
-    this.user = this.storage.getUser().id;
-    //this.id = this.route.snapshot.params['id']
-    console.log(this.user)
+      this.modif1 = {
+        numeroOrEmail:null,
+        currentpassword: null,
+        newpassword: null,
+        confirmpassword: null,
+      };
+    }
+
     
+nom:any
+  ngOnInit() {
+    //this.id = this.route.snapshot.params['id']
+    console.log(this.user);
+    this.nom = this.user.nom;    
 
    
   }
@@ -61,11 +69,11 @@ export class ProfilmodifPage implements OnInit {
   onSubmit(): void {
     const { nom,numero, email,adresse } = this.modif;
 
-    this.professionnelService.Modifierprofessionnels(nom,this.imageprofil,numero, email,adresse,this.user).subscribe(data =>{
+    this.professionnelService.Modifierprofessionnels(nom,this.imageprofil,numero, email,adresse,this.user.id).subscribe(data =>{
       this.modifs=data;
       console.log(data)
     })
-     this.patientService.ModifierPatient(nom,this.imageprofil,numero, email,adresse,this.user).subscribe(data =>{
+     this.patientService.ModifierPatient(nom,this.imageprofil,numero, email,adresse,this.user.id).subscribe(data =>{
       this.modifpatients=data;
       console.log(data)
     })
@@ -78,7 +86,7 @@ export class ProfilmodifPage implements OnInit {
   }
 
   ModifierMotdepasse(){
-    this.authService.ChangerMdp(this.modif1.currentpassword,this.modif1.newpassword,this.modif1.confirmpassword).subscribe(data=>{
+    this.authService.ChangerMdp(this.modif1.currentpassword,this.modif1.newpassword,this.modif1.confirmpassword,this.user.numero).subscribe(data=>{
       this.changer=data
       console.log(data)
     })

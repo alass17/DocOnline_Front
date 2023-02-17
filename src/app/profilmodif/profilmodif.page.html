@@ -40,8 +40,10 @@
       <ion-list *ngSwitchCase="'information'">
   <form >
     <div class="row">
-        <label for="formGroupExampleInput">Nom</label>
-        <input type="text" ngModel="{{user.nom}}" [(ngModel)]="modif.nom" name="nom" class="form-control" placeholder="Nom complet">
+        <label for="formGroupExampleInput">Nom</label>  
+        <!-- ngModel="{{user.nom}}" -->
+        <!-- [(ngModel)]="modif.nom" -->
+        <input type="text" value="{{modif.nom}}" [(ngModel)]="modif.nom"  name="nom" class="form-control">
       </div>
       <div class="row">
         <label for="formGroupExampleInput">Email</label>
@@ -55,7 +57,7 @@
 
       <div class="row">
         <label for="formGroupExampleInput">Adresse</label>
-        <input type="text" [(ngModel)]="modif.adresse" name="adresse" value="Bamako" class="form-control" placeholder="Adresse">
+        <input type="text" [(ngModel)]="modif.adresse" name="adresse" class="form-control" placeholder="Adresse">
       </div>
       <ion-buttons >
         <ion-button class="iob" style="margin-bottom: 20px;" (click)="onSubmit()">
@@ -69,9 +71,10 @@
 <ion-list *ngSwitchCase="'motdepasse'">
 <form>
 
+
   <div class="row">
-    <label for="formGroupExampleInput">Actuel mot de passe</label>
-    <input type="text" ngModel="{{ user.email }}" [(ngModel)]="modif1.currentpassword" name="currentpassword"  class="form-control" placeholder="Adresse e-mail">
+    <label for="formGroupExampleInput">Actuel mot de passe</label>   
+    <input type="text"   [(ngModel)]="modif1.currentpassword" name="currentpassword"  class="form-control" placeholder="Adresse e-mail">
   </div>
 
   <div class="row">

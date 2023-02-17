@@ -17,7 +17,7 @@ const httpOptions = {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  connexion(numeroOrEmail: string, password: string): Observable<any> {
+      connexion(numeroOrEmail: string, password: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signin',
       {
@@ -80,19 +80,20 @@ export class AuthService {
 
 
 
-  ChangerMdp(currentpassword:any,newpassword:any, confirmpassword:any):Observable<any>{
+  ChangerMdp(currentpassword:any,newpassword:any, confirmpassword:any,numero:any):Observable<any>{
     // let data = new FormData();
     // data.append("jour",jourRdv)
     // data.append("heure",heureRdv)
     // data.append("objetRdv",objetRdv)
     const data={
+      
       "currentpassword":currentpassword,
       "newpassword":newpassword, 
       "confirmpassword":confirmpassword   
     }
   
   
-    return this.http.post(`http://localhost:8080/api/auth/changePassword`,data);
+    return this.http.post(`http://localhost:8080/api/auth/changePassword/${numero}`,data);
 
   }
 }

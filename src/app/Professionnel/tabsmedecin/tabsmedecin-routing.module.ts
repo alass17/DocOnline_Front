@@ -5,7 +5,7 @@ import { TabsmedecinPage } from './tabsmedecin.page';
 
 const routes: Routes = [
   {
-    path: 'tabsmedecin',
+    path: '',
     component: TabsmedecinPage,
     children: [
       
@@ -24,19 +24,21 @@ const routes: Routes = [
       {
         path: 'patients',
         loadChildren: () => import('../patients/patients.module').then( m => m.PatientsPageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/tabsmedecin/accueil-prof',
-        pathMatch: 'full'
       }
+      // ,
+      // {
+      //   path: '',
+      //   redirectTo: '/tabsmedecin/accueil-prof',
+      //   pathMatch: 'full'
+      // }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabsmedecin/accueil-prof',
-    pathMatch: 'full'
   }
+  // ,
+  // {
+  //   path: '',
+  //   redirectTo: '/tabsmedecin/accueil-prof',
+  //   pathMatch: 'full'
+  // }
 
   
 ];

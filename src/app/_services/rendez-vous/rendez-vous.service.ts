@@ -2,7 +2,7 @@ import { Time } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RendezVous } from '../Classes/rendez-vous/rendez-vous';
+import { RendezVous } from '../../Classes/rendez-vous/rendez-vous';
 
 
 @Injectable({
@@ -50,9 +50,20 @@ export class RendezVousService {
   }
 
 
-getAllPatientForProfessinnel(professionnelId:any){
+getAllRendezvousForProfessionnel(professionnelId:any){
   return this.http.get(`http://localhost:8080/rendezvous/patients/${professionnelId}`)
 
 }
+
+
+affichertouslesrendezvousProf(id_professionnel:any){
+  return this.http.get(`http://localhost:8080/rendezvous/mesrendezvousprof/${id_professionnel}`)
+}
+
+
+getRendezvousById(id:any):Observable<any>{
+  return this.http.get(`http://localhost:8080/rendezvous/troverrendezvousparid/${id}`)
+}
+
 
 }

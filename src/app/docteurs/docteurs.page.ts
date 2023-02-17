@@ -14,6 +14,7 @@ export class DocteursPage implements OnInit {
   professionnels:any;
   specialites:any;
   idprof:any
+  image: any;
 
   constructor(private docteurService:DocteursService,private specialiteService:SpecialiteService, private router : Router) { }
 
@@ -22,6 +23,7 @@ export class DocteursPage implements OnInit {
     this.docteurService.getAllProfessionnel().subscribe(data =>{
       console.log(data)
       this.professionnels=data;
+      this.image=this.professionnels.imageprofil
    });
 
    this.specialiteService.getAllSpecialite().subscribe(data =>{

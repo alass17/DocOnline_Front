@@ -37,11 +37,7 @@
     font-size: 40px;
 
   }
-  ion-card{
-    text-align: center;
-    --max-height: 200px;
-    --max-width: 200px;
-  }
+
   .nbre{
     font-size: 20px;
     color:#368E8C;
@@ -103,6 +99,7 @@ ion-card{
 }
 .rdv{
     margin-top: -10px;
+    margin-right: 75px;
 }
 .bien{
     margin-top: 30px;
@@ -128,3 +125,66 @@ ion-badge {
     right: -3px;
     top: 5px;
 }
+
+ion-avatar{
+    width: 30px;
+    height: 30px;
+}
+.divs{
+    display: flex;
+
+
+}
+.noms{
+    padding: 5px;
+    font-size: 16px;
+}
+.trait{
+    border-bottom: 1px solid rgb(176, 168, 168);
+    width: 100%;
+    margin-top:-10px;
+}
+.jh{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 17px;
+    padding-top: 5px;
+
+}
+
+// ion-card{
+//     // border-radius: 15px;
+//     border: 1px solid rgb(227, 224, 224);
+//     width: 80%;
+//     height: 90px;
+//     border-left: 7px solid #353558;
+//     margin-top: 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+// .rdv{
+//     margin-top: -10px;
+// }
+// ion-content{
+//     // ICI ON BLOCK LE SCROLLING
+//     --offset-bottom: auto!important;
+//     background: #F8F6FB;
+//   --overflow: hidden;
+//   overflow: auto;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+//   }
+//   ion-badge {
+//     position: absolute;
+//     font-size: 8px;
+//     right: -3px;
+//     top: 5px;
+// }
+// ion-card-header.ion-inherit-color.md.hydrated {
+//     margin-top: -11px;
+// }
+// p {
+//     margin-top: -7px;
+   
+// }

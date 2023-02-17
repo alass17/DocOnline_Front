@@ -8,11 +8,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PopupnotificatonComponent } from './popupnotificaton/popupnotificaton.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,PopupnotificatonComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,
     HttpClientModule,ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },httpInterceptorProviders],

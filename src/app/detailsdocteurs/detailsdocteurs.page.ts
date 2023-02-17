@@ -10,7 +10,7 @@ import { RendezVous } from '../Classes/rendez-vous/rendez-vous';
 import { DocteursService } from '../_services/docteur/docteurs.service';
 import { ObjetService } from '../_services/objet/objet.service';
 import { PatientService } from '../_services/Patient/patient.service';
-import { RendezVousService } from '../_services/rendez-vous.service';
+import { RendezVousService } from '../_services/rendez-vous/rendez-vous.service';
 import { SpecialiteService } from '../_services/specialite/specialite.service';
 import { StorageService } from '../_services/storage/storage.service';
 
@@ -83,7 +83,7 @@ export class DetailsdocteursPage implements OnInit {
       this.email = data.email
       this.adresse = data.adresse
       this.iddocteur = data.id;
-      this.profession = data.specialites
+      this.profession = data.specialites  
       console.log("user +" + this.user)
       console.log("docteur +" + this.iddocteur)
     });

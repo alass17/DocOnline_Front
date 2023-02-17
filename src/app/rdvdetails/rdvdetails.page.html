@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="margin-left:-10px">Détails rendez-vous</ion-title>
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+        <ion-icon name="chevron-back-outline" ></ion-icon>
+      </ion-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="container-fluid tout" >
+
+  <div class="image" style="text-align: center; display: flex;justify-content: center;color: #368E8C;">
+    <ion-icon name="calendar" style="width: 80px;height: 80px; 
+    " ></ion-icon>
+
+  </div>
+  <div class="information" *ngIf="role=='ROLE_PATIENT'">
+  <div class="div mb-3">
+    Docteur : <b> {{nomprof}} </b>
+  </div>
+  <div class="div mb-3">
+    Numéro : <b> {{numero}}</b>
+  </div>
+
+  <div class="div mb-3">
+    Email : <b> {{email}} </b>
+  </div>
+
+  <div class="div mb-3">
+    Date : <b> {{date}} </b>
+  </div>
+
+  <div class="div mb-3">
+    Heure : <b> {{heuredebut}} - {{heurefIN}}</b>
+  </div>
+
+  <div class="div mb-3">
+    Objet : <b> {{odjet}} </b>
+  </div>
+</div>
+
+  <div class="information" *ngIf="role=='ROLE_PROFESSIONNEL'">
+  <div class="div mb-3">
+    Patient : <b> {{nompatient}} </b>
+  </div>
+  <div class="div mb-3">
+    Numéro : <b> {{numeropatient}}</b>
+  </div>
+
+  <div class="div mb-3">
+    Email : <b> {{emailpatient}} </b>
+  </div>
+
+  <div class="div mb-3">
+    Date : <b> {{date}} </b>
+  </div>
+
+  <div class="div mb-3">
+    Heure : <b> {{heuredebut}} - {{heurefIN}}</b>
+  </div>
+
+  <div class="div mb-3">
+    Objet : <b> {{odjet}} </b>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+</ion-content>

@@ -9,15 +9,15 @@
     <div class="entete">
     <div class="haut">
     <ion-avatar>
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      <img alt="R" src="../../../assets/img/{{user.imageprofil}}" />
     </ion-avatar>
     
   </div>
   <div class="droite">
   <ion-buttons slot="primary">
-    <ion-button>
+    <ion-button (click)="presentPopover($event)">
       <ion-icon class="not" name="notifications-outline" ></ion-icon>
-      <ion-badge>3</ion-badge>
+      <ion-badge>{{total}}</ion-badge>
     </ion-button>
 
     <ion-buttons slot="primary">
@@ -54,7 +54,7 @@
 </div>
     <div class="bien">
       <h3>Bienvenue !!</h3>
-       <h4>Tiec</h4>
+       <h4>{{nom}}</h4>
     </div>
 
   </div>
@@ -72,7 +72,7 @@
       <div class="col colonne">
         <div>
           <ion-icon name="calendar" class="ttt"></ion-icon>
-          <p class="nbre">5</p>
+          <p class="nbre">{{total}}</p>
           <h6 class="texte">Rdvs</h6>
         </div>
       </div>
@@ -85,13 +85,13 @@
     <ion-slides [options]="mesSlides">
 
 
-      <ion-slide >
-        <ion-card >
+      <ion-slide  *ngFor="let s of tous">
+        <ion-card  >
           <ion-card-header>
             <div class="divs">
-            <ion-avatar>
-              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-            </ion-avatar> <b class="noms">Diarra</b>
+            <ion-avatar >
+              <img alt="R" src="../../../assets/img/{{s.patient.imageprofil}}" />
+            </ion-avatar> <b class="noms">{{s.patient.nom}}</b>
           </div>
           </ion-card-header>
         
@@ -100,11 +100,11 @@
           </ion-card-content>
           <div class="trait"></div>
           <div class="jh">
-         <div class="jour">
-          <p>20:11/11</p>  
+         <div class="jour"  >
+          <p>{{s.date}}</p>  
          </div>
          <div class="heure">
-          <p>14:00</p>
+          <p>{{s.fuseauHoraire.timeStart}}</p>
          </div>
           </div>
       

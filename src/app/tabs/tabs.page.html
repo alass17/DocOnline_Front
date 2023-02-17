@@ -7,23 +7,31 @@
     <div class="im">
      
         <ion-avatar class="avatar">
-          <img alt="Silhouette of a person's head" src="../../assets/img/5edbc627ff214417f0a4f3dda15d5156.jpg" />
+          <img alt="Silhouette of a person's head" src="/assets/img/{{imageprofil}}" />
         </ion-avatar>
     </div>
   
 <div class="texts">
-  Salut,Tiec
+ {{nom}}
 </div>
 </div>
     <ion-buttons slot="primary">
-      <ion-button>
+    <ion-buttons >
+      <ion-button class="deux" (click)="presentPopover($event)" >
+      
         <ion-icon class="not" name="notifications-outline" ></ion-icon>
-        <ion-badge>3</ion-badge>
+        <ion-badge >{{total}}</ion-badge>
       </ion-button>
+      <!-- <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+        <ng-template>
+          <ion-content class="ion-padding contenu ">Hello World!</ion-content>
+        </ng-template>
+      </ion-popover> -->
+    </ion-buttons>
 
       <ion-buttons slot="primary">
         <ion-button id="popover-button">
-          <i class="bi bi-three-dots"></i>
+          <i class="bi bi-three-dots  point"></i>
         </ion-button>
     
         <ion-popover trigger="popover-button" [dismissOnSelect]="true" class="popUps">

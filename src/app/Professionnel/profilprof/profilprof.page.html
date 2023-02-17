@@ -2,7 +2,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Mon profil</ion-title>
-    
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+        <ion-icon name="chevron-back-outline" ></ion-icon>
+      </ion-button> 
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,10 +17,10 @@
 
       <div class="top-container">
 
-        <img src="../../assets/img/img1.jpg" class="img-fluid profile-image" width="70">
+        <img src="../../assets/img/{{imageprofil}}" class="img-fluid profile-image" width="70">
 
         <div class="ml-3">
-          <h5 class="name">XCVBN?</h5>
+          <h5 class="name">{{user.nom}}</h5>
         
         </div>
       </div>
@@ -66,7 +70,7 @@
             <h6 class="mb-0">Nom & Prenom</h6>
           </div>
           <div class="col-sm-9 text-secondary">
-            FCGHBJN?K.
+            {{user.nom}}
           </div>
         </div>
         <hr>
@@ -75,7 +79,7 @@
             <h6 class="mb-0">Email</h6>
           </div>
           <div class="col-sm-9 text-secondary">
-            XDFCVGBN?.
+            {{user.email}}
           </div>
         </div>
         <hr>
@@ -84,7 +88,7 @@
             <h6 class="mb-0">Numéro</h6>
           </div>
           <div class="col-sm-9 text-secondary">
-          XCVBN?
+            {{user.numero}}
           </div>
         </div>
         <hr>
@@ -93,7 +97,7 @@
             <h6 class="mb-0">Adresse</h6>
           </div>
           <div class="col-sm-9 text-secondary">
-           SDFGH
+            {{user.adresse}}
           </div>
         </div>
         <div class="col-md-8" >

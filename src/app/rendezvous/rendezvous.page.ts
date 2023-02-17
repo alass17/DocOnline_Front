@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RendezVousService } from '../_services/rendez-vous.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { DocteursService } from '../_services/docteur/docteurs.service';
+import { RendezVousService } from '../_services/rendez-vous/rendez-vous.service';
 import { StorageService } from '../_services/storage/storage.service';
 
 @Component({
@@ -11,7 +13,8 @@ export class RendezvousPage implements OnInit {
   rdvs:any
   user:any
   mesrdvs:any
-  constructor(private rendezvousService:RendezVousService,private storage:StorageService) { }
+  constructor(private rendezvousService:RendezVousService,private storage:StorageService, private router : Router
+  ) { }
   
 
   ngOnInit() {
@@ -26,7 +29,12 @@ export class RendezvousPage implements OnInit {
     console.log(data)
  });
 
-
   }
 
+
+  goToDetailsRdv(id:Number){
+    return this.router.navigate(['/rdvdetails', id])
+  }
+
+  
 }

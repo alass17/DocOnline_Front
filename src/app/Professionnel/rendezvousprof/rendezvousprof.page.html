@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="primary">
-      <ion-button>
+      <ion-button (click)="presentPopover($event)">
         <ion-icon class="not" name="notifications-outline" ></ion-icon>
-        <ion-badge>3</ion-badge>
+        <ion-badge>{{total}}</ion-badge>
       </ion-button>
   
       <ion-buttons slot="primary">
@@ -40,13 +40,19 @@
 </ion-header>
 
 <ion-content>
+<div class="button">
+  <button routerLink="/calendar" class="bbtn">
+    <ion-icon name="calendar"></ion-icon>
 
-  <ion-card  *ngFor="let s of mesrdv" >
+    Mon calendrier
+  </button>
+</div>
+  <ion-card  *ngFor="let s of tous" (click)="goToDetailsDocteur(s.idrdv)">
     <ion-card-header>
       <div class="divs">
       <ion-avatar>
-        <img alt="Silhouette of a person's head" src="../../../assets/img/{{s.imageprofil}}" />
-      </ion-avatar> <b class="noms">{{s.nom}}</b>
+        <img alt="" src="../../../assets/img/{{s.patient.imageprofil}}" />
+      </ion-avatar> <b class="noms">{{s.patient.nom}}</b>
     </div>
     </ion-card-header>
   
@@ -55,11 +61,11 @@
     </ion-card-content>
     <div class="trait"></div>
     <div class="jh">
-   <div class="jour">
-    <p>{{s.rdv.date}}</p>  
+   <div class="jour"  >
+    <p>{{s.date}}</p>  
    </div>
    <div class="heure">
-    <p>{{s.fuseauHoraire.tim}}</p>
+    <p>{{s.fuseauHoraire.timeStart}}</p>
    </div>
     </div>
 

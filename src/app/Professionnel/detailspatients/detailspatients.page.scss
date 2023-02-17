@@ -1,0 +1,56 @@
+.avatars{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+img{
+    border-radius: 12px;
+}
+
+ion-card{
+    padding: 15px;
+
+
+}
+.noms{
+    font-size: 16px;
+}
+.tt{
+    margin: 20px;
+}
+.info{
+    margin-left: 12px;
+    font-weight: bold;
+}
+.nomtt{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.ttt{
+    margin-top: 10px;
+}
+.bbbton ion-button{
+    border: 1px solid #353558;
+    border-radius: 5px;
+    background-color: #353558;
+    color: white;
+}
+.tout{
+    margin-top:25%;
+
+}
+
+
+  ion-content{
+    // ICI ON BLOCK LE SCROLLING
+    --offset-bottom: auto!important;
+    background: #F8F6FB;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }
