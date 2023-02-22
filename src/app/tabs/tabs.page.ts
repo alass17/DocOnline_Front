@@ -41,8 +41,8 @@ export class TabsPage {
   
   constructor(private authService:AuthService,private storageService:StorageService,private route:Router
    ,private patientService:PatientService,public popoverController: PopoverController,private notification:NotificationService) {
-    this.nom= this.storageService.getUser().nom
-  
+    this.user = this.storageService.getUser();
+    this.nom=this.user.nom
     
    }
 

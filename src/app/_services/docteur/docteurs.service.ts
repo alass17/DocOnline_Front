@@ -59,7 +59,7 @@ export class DocteursService {
   // }
 
   
-  Inscriptionprofessionnels(nom:any,imageprofil:File,numero:any,email:any,password:any,confirmpassword:any,adresse:any,document:File,idspec:any){
+  Inscriptionprofessionnels(nom:any,imageprofil:File,numero:any,email:any,password:any,confirmpassword:any,adresse:any,document:File,idspec:any,longitude:any,lagitude:any){
     const data=new FormData();
     data.append("nom",nom)
     data.append("imageprofil",imageprofil)
@@ -70,7 +70,7 @@ export class DocteursService {
     data.append("adresse",adresse)
     data.append("document",document)
 
-    return this.http.post(`http://localhost:8080/prof/signup/${idspec}`,data)
+    return this.http.post(`http://localhost:8080/prof/signup/${idspec}/${lagitude}/${longitude}`,data)
 
   }
 

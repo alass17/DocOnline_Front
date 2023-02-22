@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { SpecialiteService } from 'src/app/_services/specialite/specialite.service';
 import { DocteursService } from 'src/app/_services/docteur/docteurs.service';
 
+import { Geolocation } from '@capacitor/geolocation';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 @Component({
   selector: 'app-inscriptionprof',
   templateUrl: './inscriptionprof.page.html',
@@ -58,17 +60,74 @@ specialites:any
   profs:any
   registerForm: any;
   error: any;
-
+  userLatitude: any;
+  userLongitude: any;
+  
+  geoAddress: any;
+// LOCATION
+options: NativeGeocoderOptions = {
+  useLocale: true,
+  maxResults: 5
+}
 
 
   // constructor(private authService:AuthService,private docteurService:DocteursService) { }
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private http: HttpClient, private docteurService:DocteursService
-    ,private formBuilder: FormBuilder,private router: Router,private specialiteService:SpecialiteService) {
+    ,private formBuilder: FormBuilder,private router: Router,private specialiteService:SpecialiteService, private nativeGeocoder: NativeGeocoder) {
 
   }
+
+  // Location debut
+  async fetchLocation() {
+    const location = await Geolocation.getCurrentPosition();
+    console.log('location = ', location);
+    this.nativeGeocoder.reverseGeocode(location.coords.latitude,
+      location.coords.longitude,
+      this.options)
+      .then((result: NativeGeocoderResult[]) => {
+        console.log('result = ', result);
+        console.log('result 0 = ', result[0]);
+
+        this.geoAddress = this.generateAddress(result[0]);
+        console.log('location address = ', this.geoAddress);
+      });
+
+      this.userLatitude = location.coords.latitude
+      this.userLongitude = location.coords.longitude
+
+  }
+
+  generateAddress(addressObj: any) {
+    let obj: any[] = [];
+    let uniqueNames: any[] = [];
+    let address = "";
+    for (let key in addressObj) {
+      if (key !== 'areasOfInterest') {
+        obj.push(addressObj[key]);
+      }
+    }
+
+    let i = 0;
+    obj.forEach(value => {
+      if (uniqueNames.indexOf(obj[i]) === -1) {
+        uniqueNames.push(obj[i]);
+      }
+      i++;
+    });
+
+    uniqueNames.reverse();
+    for (const val of uniqueNames) {
+      if (uniqueNames[val].length > 0) {
+        address += uniqueNames[val] + ', ';
+      }
+    }
+    return address.slice(0, -2);
+  }
+  // fin location
+  
   ngOnInit() {
  
-
+this.fetchLocation()
 this.specialiteService.getAllSpecialite().subscribe(data => {
   
   this.specialites = data;
@@ -133,7 +192,7 @@ chargeImageProfil(evente: any){
     this.docteurService.Inscriptionprofessionnels(this.inscriptionModel.nom,
       this.imageprofil,this.inscriptionModel.numero,this.inscriptionModel.email,
       this.inscriptionModel.password,this.inscriptionModel.confirmpassword,this.inscriptionModel.adresse,
-      this.document,this.spec).subscribe(data =>{
+      this.document,this.spec,this.userLatitude,this.userLongitude).subscribe(data =>{
       this.inscriptions=data;
       console.log(data)
     })

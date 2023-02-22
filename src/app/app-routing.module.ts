@@ -105,6 +105,10 @@ const routes: Routes = [
     path: 'rdvdetails/:id',
     loadChildren: () => import('./rdvdetails/rdvdetails.module').then( m => m.RdvdetailsPageModule)
   },
+  {
+    path: 'intermediaire',
+    loadChildren: () => import('./intermediaire/intermediaire.module').then( m => m.IntermediairePageModule)
+  },
   
 ];
 @NgModule({

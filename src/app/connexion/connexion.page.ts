@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Console } from 'console';
+import Swal from 'sweetalert2';
 import { AuthService } from '../_services/auth/auth.service';
 import { StorageService } from '../_services/storage/storage.service';
 
@@ -40,6 +41,7 @@ export class ConnexionPage implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        
          this.roles = this.storageService.getUser().roles;
        // this.reloadPage();
         console.log(this.roles[0])
@@ -55,8 +57,12 @@ export class ConnexionPage implements OnInit {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
+
+      
       
     });
+
+    
   }
 
   reloadPage(): void {

@@ -1,3 +1,6 @@
+ion-content{
+    --background: #368E8C;
+}
 
 
 .conneexiontext {
@@ -26,12 +29,12 @@ h3 {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: 1px solid white;
-    height: 455px;
+     height: 510px ;
     position: fixed;
     width: 100%;
 
     overflow-y: scroll; 
-    height: 420px;
+  
     --overflow: hidden;
     overflow: auto;
 
@@ -53,6 +56,8 @@ h3 {
 
 .textt {
     font-size: 13px;
+    text-align: center;
+    margin-bottom: 70px;
 }
 
 
@@ -63,29 +68,16 @@ h3 {
 .inscription {
     border-radius: 10px;
     border: 1px solid #368E8C;
-    width: 45%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px;
+    padding: 5px;
     margin-bottom: 15px;
     background-color: #368E8C;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 1px;
-
-
-
-}
-
-
-.inscription:hover{
-    
-    border: 1px solid #353558;
-   
-    background-color: #353558;
-    color: white;
-    font-size: 22px;
-    letter-spacing: 1px;
+    margin-top: 10px;
 
 
 
@@ -96,13 +88,13 @@ h3 {
     flex-direction: column;
 }
 
-label,select {
+label {
     font-size: 14px !important;
 }
 
 .form-floating {
     height: 45px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
 }
 
@@ -124,16 +116,4 @@ input#floatingInput:hover {
 input#floatingPassword:hover {
 
     box-shadow: none;
-}
-
-.bbtton ion-button{
-    border: 1px solid #353558;
-    border-radius: 5px;
-    background-color: #353558;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-
 }
