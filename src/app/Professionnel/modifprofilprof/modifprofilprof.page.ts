@@ -30,6 +30,7 @@ export class ModifprofilprofPage implements OnInit {
   professionnel!: Docteur;
   id!: number;
   changer: any;
+  docteurs: any;
   constructor(private storage :StorageService,private userService:UserService,
 
     private route:  ActivatedRoute,private professionnelService:DocteursService,
@@ -52,6 +53,13 @@ export class ModifprofilprofPage implements OnInit {
         newpassword: null,
         confirmpassword: null,
       };
+
+      this.professionnelService.getProfessionnelById(this.user.id).subscribe(data => {
+        console.log(data)
+        this.docteurs=data
+        this.imageprofil=data.imageprofil
+      })
+    
     }
 
     

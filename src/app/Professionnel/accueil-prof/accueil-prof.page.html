@@ -9,7 +9,9 @@
     <div class="entete">
     <div class="haut">
     <ion-avatar>
-      <img alt="R" src="../../../assets/img/{{user.imageprofil}}" />
+      <img alt="R" src="../../../assets/img/{{docteurs?.imageprofil}}"/> 
+
+      <!-- <img alt="R" src="../../../assets/img/{{user.imageprofil}}" /> -->
     </ion-avatar>
     
   </div>
@@ -90,7 +92,9 @@
           <ion-card-header>
             <div class="divs">
             <ion-avatar >
-              <img alt="R" src="../../../assets/img/{{s.patient.imageprofil}}" />
+              <!-- <img alt="R" src="../../../assets/img/{{s.patient.imageprofil}}" /> -->
+
+             <img alt="R" src="../../../assets/img/{{s.patient.imageprofil}}" />
             </ion-avatar> <b class="noms">{{s.patient.nom}}</b>
           </div>
           </ion-card-header>

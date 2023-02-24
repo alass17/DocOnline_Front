@@ -43,6 +43,12 @@ export class TabsPage {
    ,private patientService:PatientService,public popoverController: PopoverController,private notification:NotificationService) {
     this.user = this.storageService.getUser();
     this.nom=this.user.nom
+
+    this.patientService.getPatientById(this.user.id).subscribe(data => {
+      console.log(data)
+      this.patients=data
+      this.imageprofil=data.imageprofil
+    })
     
    }
 

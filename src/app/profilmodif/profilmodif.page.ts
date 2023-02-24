@@ -29,6 +29,7 @@ export class ProfilmodifPage implements OnInit {
   professionnel!: Docteur;
   id!: number;
   changer: any;
+  patients: any;
   constructor(private storage :StorageService,private userService:UserService,
     private route:  ActivatedRoute,private professionnelService:DocteursService,
     private patientService:PatientService,private authService:AuthService) { 
@@ -49,6 +50,12 @@ export class ProfilmodifPage implements OnInit {
         newpassword: null,
         confirmpassword: null,
       };
+
+      this.patientService.getPatientById(this.user.id).subscribe(data => {
+        console.log(data)
+        this.patients=data
+        this.imageprofil=data.imageprofil
+      })
     }
 
     

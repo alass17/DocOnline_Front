@@ -21,4 +21,9 @@ export class ForgotpasswordPage implements OnInit {
       console.log(data)
     ))
   }
+
+
+  back(): void {
+    window.history.back()
+  }
 }

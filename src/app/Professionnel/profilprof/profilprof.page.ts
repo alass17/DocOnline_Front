@@ -26,7 +26,9 @@ utilisateurs:any
 allusers:any
   imageprofil: any;
   constructor(private storage :StorageService,private userService:UserService,
-    private route:  ActivatedRoute,private docteurService:DocteursService) { }
+    private route:  ActivatedRoute,private docteurService:DocteursService) { 
+      
+    }
 
   ngOnInit() {
      this.user = this.storage.getUser();
