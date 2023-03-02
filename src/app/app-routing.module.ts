@@ -97,10 +97,7 @@ const routes: Routes = [
     loadChildren: () => import('./Professionnel/detailspatients/detailspatients.module').then( m => m.DetailspatientsPageModule)
   },
  
-  {
-    path: 'calendar',
-    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
-  },
+ 
   {
     path: 'rdvdetails/:id',
     loadChildren: () => import('./rdvdetails/rdvdetails.module').then( m => m.RdvdetailsPageModule)
@@ -108,6 +105,14 @@ const routes: Routes = [
   {
     path: 'intermediaire',
     loadChildren: () => import('./intermediaire/intermediaire.module').then( m => m.IntermediairePageModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'specialite/:id',
+    loadChildren: () => import('./specialite/specialite.module').then( m => m.SpecialitePageModule)
   },
   
 ];

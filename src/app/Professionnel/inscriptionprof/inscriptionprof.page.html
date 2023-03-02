@@ -72,7 +72,7 @@
 
         <div class="select">
           <select class="form-select form-select-lg mb-3" [(ngModel)]="spec" name="idspec"  aria-label=".form-select-lg example" style="box-shadow: none;">
-            <option selected>Specialité</option>
+            <option selected >Specialité</option>
             <option *ngFor="let specc of specialites" value="{{specc.idspec}}">{{specc.libelle}}</option>
          
           </select>
@@ -93,6 +93,12 @@
               
           <label for="nom">Document</label>
           
+        </div>
+
+        <div class="form-floating">
+          <textarea class="form-control" id="floatingTextarea"  [(ngModel)]="inscriptionModel.biographie"
+          name="biographie"></textarea>
+          <label for="floatingTextarea">Biographie</label>
         </div>
         
 

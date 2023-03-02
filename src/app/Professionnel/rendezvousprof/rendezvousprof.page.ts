@@ -14,6 +14,8 @@ import { StorageService } from '../../_services/storage/storage.service';
   styleUrls: ['./rendezvousprof.page.scss'],
 })
 export class RendezvousprofPage implements OnInit {
+
+  
   user: any;
   mesrdv: any;
   mesrdvs1: any;

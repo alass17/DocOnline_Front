@@ -65,5 +65,9 @@ getRendezvousById(id:any):Observable<any>{
   return this.http.get(`http://localhost:8080/rendezvous/troverrendezvousparid/${id}`)
 }
 
+supprimerRendezVous(idrdv:any){
+  return this.http.delete(`http://localhost:8080/rendezvous/supprimer/${idrdv}`)
+}
+  
 
 }

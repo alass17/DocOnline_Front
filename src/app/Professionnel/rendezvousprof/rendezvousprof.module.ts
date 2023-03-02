@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RendezvousprofPageRoutingModule } from './rendezvousprof-routing.module';
 
 import { RendezvousprofPage } from './rendezvousprof.page';
+import { NgxPaginationModule } from 'ngx-pagination/public-api';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RendezvousprofPageRoutingModule
+    RendezvousprofPageRoutingModule,
+    
   ],
   declarations: [RendezvousprofPage]
 })

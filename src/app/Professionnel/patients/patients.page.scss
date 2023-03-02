@@ -1,24 +1,54 @@
-.marg{
-    margin-top: auto;
+
+.colimg{
+    // margin-top: 15px;
+    border-radius: 20px ;
+
+    width: 75px;
+    height: 75px;
+ }
+
+  .seconde{
+    margin-top:15px;
     margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -10px;
+  
+    // text-align: center;
+  }
+
+  
+.nom{
+    font-weight: bold;
+    // font-size: 13px;
 }
 
-img{
-    border-radius: 12px;
+.bb{
+   
+    font-weight: 200 !important;
 }
+.dr{
+    font-size: 13px;
+    font-weight: bold !important  ;
+    margin-bottom: 2px;
+}
+ion-content{
+    // ICI ON BLOCK LE SCROLLING
+    --offset-bottom: auto!important;
+    background: #FFFFFF;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }
 
-ion-card{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+  .tt{
+    padding: 10px;
+  }
+
+  ion-card{
     border-radius: 15px;
+    height: 100px;
+    width: 80%;
     border: 1px solid rgb(226, 218, 218);
-}
-
-h4{
-    margin-left: -15px
-
-}
+    margin: 20px;
+  }

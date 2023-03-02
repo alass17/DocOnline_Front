@@ -13,6 +13,7 @@ export class RendezvousPage implements OnInit {
   rdvs:any
   user:any
   mesrdvs:any
+  delrdv: any;
   constructor(private rendezvousService:RendezVousService,private storage:StorageService, private router : Router
   ) { }
   
@@ -29,6 +30,8 @@ export class RendezvousPage implements OnInit {
     console.log(data)
  });
 
+ 
+
   }
 
 
@@ -36,5 +39,11 @@ export class RendezvousPage implements OnInit {
     return this.router.navigate(['/rdvdetails', id])
   }
 
+  DeleteRdv(idrdv:number){
+    this.rendezvousService.supprimerRendezVous(idrdv).subscribe(data=>{
+      this.delrdv=data
+      console.log(data)
+    })
+  }
   
 }

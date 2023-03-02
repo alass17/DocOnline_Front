@@ -28,12 +28,14 @@ export class PatientsPage implements OnInit {
   roleMsg = '';
   imageprofil: any;
   docteurs: any;
+  patients: any;
 
   constructor(private router : Router,private authService:AuthService
     ,private storage:StorageService,
     private route:Router,private docteurService:DocteursService
 
-    ,private rdvService:RendezVousService,private popoverController: PopoverController,private notification:NotificationService) { }
+    ,private rdvService:RendezVousService,private popoverController: PopoverController,private notification:NotificationService,
+    private rendezService:RendezVousService) { }
 
     async presentPopover(e: Event) {
       const popover = await this.popoverController.create({
@@ -48,6 +50,7 @@ export class PatientsPage implements OnInit {
     }
     
   ngOnInit() {
+      this.user=this.storage.getUser()
 
     this.rdvService.affichertouslesrendezvousProf(this.user.id).subscribe(data =>{
       this.tous=data
@@ -56,6 +59,14 @@ export class PatientsPage implements OnInit {
      this.notification.AffichernotificationforProfessionnel(this.user.id).subscribe(data =>{
       this.notifications=data
       this.total=this.notifications.length
+  
+  
+    })
+
+
+    this.rendezService.getAllRendezvousForProfessionnel(this.user.id).subscribe(data =>{
+      this.patients=data
+      console.log(data)
   
   
     })

@@ -1,0 +1,47 @@
+
+img{
+    // margin-top: 15px;
+    border-radius: 50% ;
+
+    width: 75px;
+    height: 75px;
+ }
+
+ .r1{
+    margin-left: auto;
+    margin-right: auto;
+ }
+ .R2{
+    text-align: center;
+ 
+    margin-left: auto;
+    margin-right: auto;
+ }
+ion-content{
+    // ICI ON BLOCK LE SCROLLING
+    --offset-bottom: auto!important;
+    background: #F8F6FB;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  }
+
+  .container{
+    text-align: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    // display: flex;
+    // justify-content: center;
+  }
+
+  ion-card{
+     border-radius: 20px;
+     margin-left: auto !important;
+     margin-right: auto !important;
+    // height: 100px;
+     width: 65%;
+    // border: 1px solid rgb(226, 218, 218);
+    // margin: 20px;
+  }

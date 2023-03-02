@@ -29,13 +29,19 @@
   <ion-card>
  <div class="noms">
   <div class="tt ttt"> Nom :<b> {{nom}}</b></div>
-  <div class="tt"> Email :<b> {{email}}</b></div>
+  <div class="tt" style="font-size: 15px;"> Email :<b> {{email}}</b></div>
   <div class="tt"> Téléphone :<b> {{numero}}</b></div>
   <div class="tt"> Profession :<b *ngFor="let s of profession" > {{s.libelle}}</b></div>
   <div class="tt"> Adresse :<b> {{adresse}}</b></div>
  </div>
 </ion-card>
 
+
+</div>
+
+<div class="biographie" style="margin: 15px;">
+  <h4 style="font-weight: bold;">Biographie</h4>
+  <p>{{biographie}}</p>
 </div>
 <div class="boutton mx-5" style="margin-top: 25px;">
   <ion-buttons class="bbbton">

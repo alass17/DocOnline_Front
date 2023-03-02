@@ -10,6 +10,7 @@
   .seconde{
     margin-top:15px;
     margin-bottom: auto;
+    margin-left: -10px;
   
     // text-align: center;
   }
@@ -17,6 +18,7 @@
   
 .nom{
     font-weight: bold;
+    // font-size: 13px;
 }
 
 .bb{
@@ -24,14 +26,14 @@
     font-weight: 200 !important;
 }
 .dr{
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold !important  ;
     margin-bottom: 2px;
 }
 ion-content{
     // ICI ON BLOCK LE SCROLLING
     --offset-bottom: auto!important;
-    background: #F8F6FB;
+    background: #FFFFFF;
   --overflow: hidden;
   overflow: auto;
   &::-webkit-scrollbar {

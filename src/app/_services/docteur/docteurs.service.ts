@@ -8,12 +8,10 @@ import { Docteur } from 'src/app/Classes/docteur/docteur';
 })
 export class DocteursService {
 
-  private BASE_URL = 'http://localhost:8080/api/private';
-  private BASE_URL1 = 'http://localhost:8080/prof';
-  
-  private CALENDAR_EVENTS_URL = `${this.BASE_URL1}\\events\\daily`;
-  private DELETE_EVENT_URL = `${this.BASE_URL1}/events/`;
-  private CHANGE_EVENT_STATUS_URL = `${this.BASE_URL1}/events/status/`;
+  private BASE_URL = 'http://localhost:8080/prof';
+  private CALENDAR_EVENTS_URL = `${this.BASE_URL}\\events\\daily`;
+  private DELETE_EVENT_URL = `${this.BASE_URL}/events/`;
+  private CHANGE_EVENT_STATUS_URL = `${this.BASE_URL}/events/status/`;;
 
   api="http://localhost:8080";
   private baseUrl = 'http://localhost:8080/prof/signup';
@@ -59,7 +57,7 @@ export class DocteursService {
   // }
 
   
-  Inscriptionprofessionnels(nom:any,imageprofil:File,numero:any,email:any,password:any,confirmpassword:any,adresse:any,document:File,idspec:any,longitude:any,lagitude:any){
+  Inscriptionprofessionnels(nom:any,imageprofil:File,numero:any,email:any,password:any,confirmpassword:any,adresse:any,document:File,idspec:any,longitude:any,lagitude:any,biographie:any){
     const data=new FormData();
     data.append("nom",nom)
     data.append("imageprofil",imageprofil)
@@ -69,6 +67,7 @@ export class DocteursService {
     data.append("confirmpassword",confirmpassword)
     data.append("adresse",adresse)
     data.append("document",document)
+    data.append("biographie",biographie)
 
     return this.http.post(`http://localhost:8080/prof/signup/${idspec}/${lagitude}/${longitude}`,data)
 
@@ -116,8 +115,16 @@ export class DocteursService {
 
 
 
-  calendarEvent(calendarRequest: any): Observable<any> {
-    return this.http.post(this.CALENDAR_EVENTS_URL, calendarRequest);
+   // Show Calendar Events
+   calendarEvent(date: any,medecinId:any): Observable<any> {
+    const data={
+     "medecinId":medecinId,
+     "date":date
+
+    }
+  
+    
+    return this.http.post(`http://localhost:8080/prof/events/daily`,data);
   }
 
   // Delete Event
@@ -128,5 +135,15 @@ export class DocteursService {
   // Change Event Status
   changeEventStatus(appointmentId: number): Observable<any> {
     return this.http.post(this.CHANGE_EVENT_STATUS_URL + appointmentId, {});
+  }
+
+  AfficherPatientforProfessionnel(id_professionnel:number):Observable<any>{
+    return this.http.get(`http://localhost:8080/rendezvous/troverpatientsparidprof/${id_professionnel}`)
+
+  }
+
+  afficherprofparSpecialite(idspec:number):Observable<any>{
+    return this.http.get(`http://localhost:8080/prof/specialite/${idspec}`)
+
   }
 }

@@ -29,7 +29,8 @@ specialites:any
     password:null,
     confirmpassword: null,
     adresse:null,
-    specialite:null
+    specialite:null,
+    biographie:null
   }
 
   imageprofil:any
@@ -192,7 +193,7 @@ chargeImageProfil(evente: any){
     this.docteurService.Inscriptionprofessionnels(this.inscriptionModel.nom,
       this.imageprofil,this.inscriptionModel.numero,this.inscriptionModel.email,
       this.inscriptionModel.password,this.inscriptionModel.confirmpassword,this.inscriptionModel.adresse,
-      this.document,this.spec,this.userLatitude,this.userLongitude).subscribe(data =>{
+      this.document,this.spec,this.userLatitude,this.userLongitude,this.inscriptionModel.biographie).subscribe(data =>{
       this.inscriptions=data;
       console.log(data)
     })

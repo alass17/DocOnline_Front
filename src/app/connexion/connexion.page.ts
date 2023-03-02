@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Console } from 'console';
 import Swal from 'sweetalert2';
+import { AlerteService } from '../alerte.service';
 import { AuthService } from '../_services/auth/auth.service';
 import { StorageService } from '../_services/storage/storage.service';
 
@@ -22,7 +23,8 @@ export class ConnexionPage implements OnInit {
   errorMessage = '';
   roles: any = [];
 
-  constructor(private authService: AuthService, private storageService: StorageService, private route: Router) { }
+  constructor(private authService: AuthService, private storageService: StorageService, private route: Router,
+    private alerteService:AlerteService) { }
 
   ngOnInit() {
     // if (this.storageService.isLoggedIn()) {
@@ -55,6 +57,7 @@ export class ConnexionPage implements OnInit {
       },
       error: err => {
         this.errorMessage = err.error.message;
+        this.alerteService.presentToast(' <ion-icon name="warning" size="large"></ion-icon> Email ou mot de passe incorrect',"danger")
         this.isLoginFailed = true;
       }
 
@@ -69,4 +72,6 @@ export class ConnexionPage implements OnInit {
     window.location.reload();
   }
 
+
+  
 }

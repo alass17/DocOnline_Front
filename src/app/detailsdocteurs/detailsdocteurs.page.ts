@@ -56,6 +56,7 @@ export class DetailsdocteursPage implements OnInit {
   patient!: any
 
   rdvs: any
+  biographie: any;
 
 
 
@@ -84,6 +85,7 @@ export class DetailsdocteursPage implements OnInit {
       this.adresse = data.adresse
       this.iddocteur = data.id;
       this.profession = data.specialites  
+      this.biographie=data.biographie
       console.log("user +" + this.user)
       console.log("docteur +" + this.iddocteur)
     });

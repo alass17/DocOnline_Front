@@ -15,10 +15,12 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { WebView } from '@awesome-cordova-plugins/ionic-webview/ngx';
 import { ImagePicker } from '@awesome-cordova-plugins/image-picker/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [AppComponent,PopupnotificatonComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,
-    HttpClientModule,ReactiveFormsModule,],
+    HttpClientModule,ReactiveFormsModule,Ng2SearchPipeModule,NgxPaginationModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },httpInterceptorProviders,ImagePicker, 
     WebView,
     NativeGeocoder],

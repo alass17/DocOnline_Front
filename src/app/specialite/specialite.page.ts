@@ -5,38 +5,44 @@ import { SpecialiteService } from '../_services/specialite/specialite.service';
 import { StorageService } from '../_services/storage/storage.service';
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.page.html',
-  styleUrls: ['./accueil.page.scss'],
+  selector: 'app-specialite',
+  templateUrl: './specialite.page.html',
+  styleUrls: ['./specialite.page.scss'],
 })
-export class AccueilPage implements OnInit {
+export class SpecialitePage implements OnInit {
+
   user:any
   id:any
   specialites: any;
   spec1: any;
   dentiste: any;
-  searhText!: string;
-
   constructor(private docteurService:DocteursService,
-    private storage:StorageService,private route:Router,
-    private specialiteService:SpecialiteService) { }
+    private storage:StorageService,private route: ActivatedRoute,
+    private specialiteService:SpecialiteService) { 
+
+      
+     
+    }
 
   ngOnInit() {
     
-    // this.user=this.storage.getUser()
-
+    this.user=this.storage.getUser()
+    this.id = this.route.snapshot.params['id']
     this.specialiteService.getAllSpecialite().subscribe(data=>{
       this.specialites=data
       console.log(this.specialites)
-      console.log(this.specialites[0])
+    
       // this.spec1=this.specialites[0]
-      this.docteurService.afficherprofparSpecialite(this.specialites.idspec).subscribe(data=>{
+      this.docteurService.afficherprofparSpecialite(this.id).subscribe(data=>{
         this.dentiste=data
         console.log(data)
   
       })
     })
-   
+  }
+
+  back(): void {
+    window.history.back()
   }
 
 }

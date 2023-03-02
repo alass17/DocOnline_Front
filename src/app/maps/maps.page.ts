@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
-import { Geolocation } from "@ionic-native/geolocation/ngx";
+// import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { DocteursService } from '../_services/docteur/docteurs.service';
-import { AnySrvRecord } from 'dns';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,10 +15,14 @@ import { Router } from '@angular/router';
 export class MapsPage {
   map!: L.Map;
   professionnels: any
+  currentLocationMarker: any;
+
 
 
   constructor(private geolocalisation: Geolocation, private professionnelService: DocteursService
-    , private router: Router) { }
+    , private router: Router) {
+     
+     }
 
 
   ionViewDidEnter() {
@@ -32,6 +36,26 @@ export class MapsPage {
     }
     ).addTo(this.map);
 
+
+    // Récupérer la position actuelle de l'utilisateur
+  this.geolocalisation.getCurrentPosition().then((position: Geoposition) => {
+    // Position trouvée avec succès
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+console.log(latitude)
+console.log(longitude)
+    // Centrer la carte sur la position actuelle de l'utilisateur
+    this.map.setView([latitude, longitude], 15);
+
+    // Ajouter un marqueur à la position actuelle de l'utilisateur
+    L.marker([latitude, longitude]).addTo(this.map)
+      .bindPopup('Vous êtes ici !')
+      .openPopup();
+  }).catch((err) => {
+    // Erreur lors de la récupération de la position
+    console.log(err);
+  });
+  
     //creer un marqueur
     // const markPoint=L.marker([12.72686,-8.05997],)
 

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="margin-left:-10px">Specialite</ion-title>
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+        <ion-icon name="chevron-back-outline" ></ion-icon>
+      </ion-button> 
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="container">
+    <ion-card  *ngFor="let prof of dentiste">
+        <div class="row tt">
+         
+          <div class="row first " >
+            
+            <img class="colimg" src="../../assets/img/{{prof.imageprofil}}" alt="" >  -->
+  
+            <!-- routerLink="/detailsdocteurs" routerLinkActive="true" -->
+          <!-- </div>
+          <div class="row seconde ">
+            <p class="nom"><b class="dr">Dr {{prof.nom}}</b><br>
+              <b class="bb" *ngFor="let s of prof.specialites">{{s.libelle}}</b>
+            <p>
+            <p></p>
+  
+          </div>
+        
+        </div> -->
+    
+      <!-- </ion-card> -->
+        
+        
+       
+          
+        <!-- </div> -->
+<div class="container">
+        <ion-card  *ngFor="let prof of dentiste" style="margin-bottom: 20px;margin-top: 20px;" >
+          <ion-card-content>
+            <div class="row">
+              <div class="row r1 mb-3 ">
+            <ion-avatar>
+              <img src="../../assets/img/{{prof.imageprofil}}" alt="">
+            </ion-avatar>
+          </div>
+          <div class="row R2">
+            <h3>Dr {{prof.nom}}</h3>
+            <p style="font-size: 10px;">{{prof.email}}</p>
+          </div>
+          </div>
+          </ion-card-content>
+
+
+        </ion-card>
+      </div>
+</ion-content>

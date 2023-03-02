@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { AccueilPageRoutingModule } from './accueil-routing.module';
 
 import { AccueilPage } from './accueil.page';
+import { Ng2SearchPipe } from 'ng2-search-filter/src/ng2-filter.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AccueilPageRoutingModule
+    AccueilPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [AccueilPage]
 })

@@ -1,62 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="primary">
-      <ion-button (click)="presentPopover($event)">
-        <ion-icon class="not" name="notifications-outline" ></ion-icon>
-        <ion-badge>{{total}}</ion-badge>
-      </ion-button>
-  
-      <ion-buttons slot="primary">
-        <ion-button id="popover-button">
-          <i class="bi bi-three-dots"></i>
-        </ion-button>
-    
-        <ion-popover trigger="popover-button" [dismissOnSelect]="true" class="popUps">
-          <ng-template class="popUp">
-            <ion-content>
-              <ion-list >
-                <ion-item routerLink ="/profilprof">Mon profil</ion-item>
-                <ion-item  (click)="logout()" >Deconnexion</ion-item>
-                <!-- <button class="deconnexion" (click)="logout()" >Déconnexion</button> -->
-                <!-- <ion-item [button]="true" id="nested-trigger">More options...</ion-item> -->
-    
-                <!-- <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
-                  <ng-template>
-                    <ion-content>
-                      <ion-list>
-                        <ion-item [button]="true" [detail]="false">Nested option</ion-item>
-                      </ion-list>
-                    </ion-content>
-                  </ng-template>
-                </ion-popover> -->
-              </ion-list>
-            </ion-content>
-          </ng-template>
-        </ion-popover>
-    
-      </ion-buttons>
-    </ion-buttons>
+    <ion-title>Docteurs</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card>
-    <ion-card-content>
-      <div class="row">
-      <div class="col">
-        <ion-avatar>
-          <img src="../../../assets/img/5edbc627ff214417f0a4f3dda15d5156.jpg" alt="">
-        </ion-avatar>
-      </div>
-        <div class="col marg" >
-          <h4>NomPATIENT</h4>
-        </div>
-        <!-- <div class="col-2">
+ <div class="container">
+  <ion-card  *ngFor="let prof of patients">
+      <div class="row tt">
+       
+        <div class="col first " >
+          
+          <img class="colimg" src="../../assets/img/{{prof.imageprofil}}" alt="" > 
 
-        </div> -->
+          <!-- routerLink="/detailsdocteurs" routerLinkActive="true" -->
+        </div>
+        <div class="col seconde ">
+          <p class="nom"><b class="dr"> {{prof.nom}}</b><br>
+            <b class="bb">{{prof.numero}}</b>
+          <p>
+          <p></p>
+
+        </div>
+      
       </div>
+  
+    </ion-card>
+      
+      
      
-    </ion-card-content>
-  </ion-card>
+        
+      </div>
+   
+    
+    
+  
+
 </ion-content>

@@ -66,7 +66,7 @@
       
         <div class="col colonne" >
           <ion-icon  name="person-sharp" class="ttt"></ion-icon>
-          <p class="nbre">5</p>
+          <p class="nbre">{{patients?.length}}</p>
           <h6 class="texte">Patients</h6>
         </div>
      
@@ -81,7 +81,7 @@
     </div>
 
     <div class="div1"style="margin-top:10px">
-     <b>Mes rendez-vous</b> <b style="float: right;color: blue;font-size: 12px;">Voir plus</b> 
+     <b>Mes rendez-vous</b> <b style="float: right;color: blue;font-size: 12px;" routerLink="/tabsmedecin/rendezvousprof">Voir plus</b> 
     </div>
 
     <ion-slides [options]="mesSlides">

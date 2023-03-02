@@ -11,13 +11,13 @@
 </ion-header>
 
 <ion-content>
-  <div class="container d-flex justify-content-center mt-5">
+  
 
     <div class="card" style="margin-top: -20px; margin-bottom: 10px;">
 
       <div class="top-container">
 
-        <img src="../../assets/img/{{imageprofil}}" class="img-fluid profile-image" width="70">
+        <img src="../../assets/img/{{imageprofil}}" class="img-fluid profile-image" width="70" style="margin-top: 10px;">
 
         <div class="ml-3">
           <h5 class="name">{{user.nom}}</h5>
@@ -29,7 +29,7 @@
       <div class="button mt-2 d-flex flex-row align-items-center">
 
         <button routerLink="/profilmodif" class="btn btn-outline-primary w-100" style="margin-right: 10px;">Modifier</button>
-        <button class="btn btn-danger w-100 ml-2" >Déconnexion</button>
+        <button class="btn btn-danger w-100 ml-2" (click)="logout()">Déconnexion</button>
 
       </div>
 
@@ -106,7 +106,7 @@
       </div>
 
     </div>
-  </div>
+
 
 
 </ion-content>

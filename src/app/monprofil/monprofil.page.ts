@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../_services/auth/auth.service';
 import { PatientService } from '../_services/Patient/patient.service';
 import { StorageService } from '../_services/storage/storage.service';
 import { UserService } from '../_services/user/user.service';
@@ -26,7 +27,8 @@ utilisateurs:any
 allusers:any
   imageprofil: any;
   constructor(private storage :StorageService,private userService:UserService,
-    private route:  ActivatedRoute,private patientService:PatientService) { }
+    private route:  Router,private patientService:PatientService,
+    private authService:AuthService) { }
 
   ngOnInit() {
     this.user = this.storage.getUser();
@@ -59,5 +61,18 @@ allusers:any
 
   back(): void {
     window.history.back()
+  }
+
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        this.storage.clean();
+        this.route.navigate(['/connexion'])
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
   }
 }

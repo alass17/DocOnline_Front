@@ -23,6 +23,7 @@ export class RdvdetailsPage implements OnInit {
   nompatient: any;
   numeropatient: any;
   emailpatient: any;
+  delrdv: any;
 
   constructor(private rdv:RendezVousService,private route:ActivatedRoute,private storage:StorageService) { }
 
@@ -54,7 +55,12 @@ export class RdvdetailsPage implements OnInit {
 
 
 
-
+  DeleteRdv(idrdv:number){
+    this.rdv.supprimerRendezVous(idrdv).subscribe(data=>{
+      this.delrdv=data
+      console.log(data)
+    })
+  }
 
 
 
@@ -63,5 +69,7 @@ export class RdvdetailsPage implements OnInit {
   back(): void {
     window.history.back()
   }
+
+
 
 }

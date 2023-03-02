@@ -28,7 +28,7 @@ ion-card{
     // border-radius: 15px;
     border: 1px solid rgb(227, 224, 224);
     width: 80%;
-    height: 90px;
+     height: 110px;
     border-left: 7px solid #353558;
     margin-top: 20px;
     margin-left: auto;
@@ -40,7 +40,7 @@ ion-card{
 ion-content{
     // ICI ON BLOCK LE SCROLLING
     --offset-bottom: auto!important;
-    background: #F8F6FB;
+    background: #FFFFFF;
   --overflow: hidden;
   overflow: auto;
   &::-webkit-scrollbar {
@@ -56,10 +56,10 @@ ion-content{
 ion-card-header.ion-inherit-color.md.hydrated {
     margin-top: -11px;
 }
-p {
-    margin-top: -7px;
+// p {
+//     margin-top: -7px;
    
-}
+// }
 
 
 .bbtn{

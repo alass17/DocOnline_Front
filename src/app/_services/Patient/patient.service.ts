@@ -29,7 +29,7 @@ export class PatientService {
 
   }
 
-inscriptionPatient(nom: string,imageprofil:File,numero:string,email:string,password: string,confirmpassword: string, adresse: string): Observable<any> {
+inscriptionPatient(nom: string,imageprofil:File,numero:string,email:string,password: string,confirmpassword: string, adresse: string,longitude:any,lagitude:any): Observable<any> {
 const data =new FormData()
 data.append("nom",nom)
 data.append("imageprofil",imageprofil)
@@ -39,7 +39,7 @@ data.append("password",password)
 data.append("confirmpassword",confirmpassword)
 data.append("adresse",adresse)
 
-    return this.http.post( `http://localhost:8080/patient/signup`,data)
+    return this.http.post( `http://localhost:8080/patient/signup/${longitude}/${lagitude}`,data)
   }
 
   // Take Appointment

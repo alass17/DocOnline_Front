@@ -23,6 +23,7 @@ export class AccueilProfPage implements OnInit {
   roleMsg = '';
   imageprofil: any;
   docteurs: any;
+  patients: any;
 
   constructor(private authService:AuthService,private storageService:StorageService,private route:Router
     ,private rdvService:RendezVousService,private docteurService:DocteursService, private popoverController: PopoverController,private notification:NotificationService) { }
@@ -48,6 +49,12 @@ export class AccueilProfPage implements OnInit {
 
     })
 
+    this.rdvService.getAllRendezvousForProfessionnel(this.user.id).subscribe(data =>{
+      this.patients=data
+      console.log(data)
+  
+  
+    })
     //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     this.rdvService.affichertouslesrendezvousProf(this.user.id).subscribe(data =>{
       this.tous=data
