@@ -10,27 +10,21 @@ import { StorageService } from '../_services/storage/storage.service';
   styleUrls: ['./rendezvous.page.scss'],
 })
 export class RendezvousPage implements OnInit {
+
+  p:number=1
   rdvs:any
   user:any
   mesrdvs:any
   delrdv: any;
   constructor(private rendezvousService:RendezVousService,private storage:StorageService, private router : Router
-  ) { }
+  ) { 
+    
+  }
   
 
   ngOnInit() {
-    this.user = this.storage.getUser().id;
-
-    this.rendezvousService.getAllRendezVous().subscribe(data =>{
-      this.rdvs=data;
-      console.log(data)
-   });   
-   this.rendezvousService.getMyRendezVous(this.user).subscribe(data =>{
-    this.mesrdvs=data;
-    console.log(data)
- });
-
- 
+    console.log("je recharge:::::::::::::::::::::")
+    this.getAllrendezVous()
 
   }
 
@@ -39,11 +33,33 @@ export class RendezvousPage implements OnInit {
     return this.router.navigate(['/rdvdetails', id])
   }
 
-  DeleteRdv(idrdv:number){
-    this.rendezvousService.supprimerRendezVous(idrdv).subscribe(data=>{
-      this.delrdv=data
-      console.log(data)
-    })
-  }
   
+
+
+  getAllrendezVous(){
+    this.user = this.storage.getUser().id;
+    this.rendezvousService.getMyRendezVous(this.user).subscribe(data =>{
+     this.mesrdvs=data;
+     console.log(data)
+  });
+
+  
+
+  }
+
+   DeleteRdv(idrdv:number){
+    this.rendezvousService.supprimerRendezVous(idrdv).subscribe(data=>{
+    
+      console.log("je suis cliquer")
+      this.delrdv=data
+     
+      
+      console.log(data)
+
+      this.router.navigate(['/tabs/rendezvous']);
+        })
+      
+    
+    }
+
 }

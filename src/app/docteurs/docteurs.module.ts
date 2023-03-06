@@ -7,13 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { DocteursPageRoutingModule } from './docteurs-routing.module';
 
 import { DocteursPage } from './docteurs.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DocteursPageRoutingModule
+    DocteursPageRoutingModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   declarations: [DocteursPage]
 })

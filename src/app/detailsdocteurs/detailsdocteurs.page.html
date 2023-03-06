@@ -45,7 +45,7 @@
 </div>
 <div class="boutton mx-5" style="margin-top: 25px;">
   <ion-buttons class="bbbton">
-  <ion-button id="open-modal" expand="block"  routerLink="/prendrerdv">Prendre rdv</ion-button>
+  <ion-button id="open-modal" expand="block"  [routerLink]="['/prendrerdv',id]">Prendre rdv</ion-button>
   <!-- <ion-button id="open-modal" expand="block">Open Modal</ion-button>  -->
   <!-- <ion-modal #modal trigger="open-modal">
     <form action="">

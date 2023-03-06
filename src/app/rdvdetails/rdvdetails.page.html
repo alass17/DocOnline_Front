@@ -40,6 +40,10 @@
   <div class="div mb-3">
     Objet : <b> {{odjet}} </b>
   </div>
+
+  <div class="div1">
+    <button class="btn btn-danger w-80 ml-2" (click)="DeleteRdv(id)" >Supprimer</button>
+    </div>
 </div>
 
   <div class="information" *ngIf="role=='ROLE_PROFESSIONNEL'">
@@ -65,11 +69,13 @@
   <div class="div mb-3">
     Objet : <b> {{odjet}} </b>
   </div>
-</div>
 
-<div class="div1">
-<button class="btn btn-danger w-80 ml-2" (click)="DeleteRdv(id)">Supprimer</button>
-</div>
+  <!-- <div class="div1">
+    <button class="btn btn-danger w-80 ml-2" (click)="DeleteRdv1(id)" >Supprimer</button>
+    </div>-->
+</div> 
+
+
 </div>
 
 

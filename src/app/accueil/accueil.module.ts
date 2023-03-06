@@ -17,7 +17,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     IonicModule,
     AccueilPageRoutingModule,
-    Ng2SearchPipeModule
+    
   ],
   declarations: [AccueilPage]
 })

@@ -12,4 +12,9 @@ export class IntermediairePage implements OnInit {
   ngOnInit() {
   }
 
+
+  back(): void {
+    window.history.back()
+  }
+
 }

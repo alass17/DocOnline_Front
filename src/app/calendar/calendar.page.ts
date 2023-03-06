@@ -25,6 +25,7 @@ export class CalendarPage implements OnInit {
   calendar: Calendar = {date: '', size: 0, events: []};
   events: Event[] = [];
   user: any;
+  update: any;
   constructor(private privateService: DocteursService, private router: Router, private authService: AuthService,private storage:StorageService) { }
 
   ngOnInit() {
@@ -91,28 +92,23 @@ export class CalendarPage implements OnInit {
 
 
   updateEventStatus(event: Event) {
-    const status = (event.status) ? 'Activer' : 'Annuler';
-    if (confirm('Vous allez ' + status + ' le rendez-vous | Mr.' + event.patientName  + ' sera notifer par email. ')) {
+    // const status = (event.status) ? 'Activer' : 'Annuler';
+    
       this.privateService.changeEventStatus(event.appointmentId).subscribe(
         res => {
-
-        },
-        err => {
-              alert('Une erreur s\'est produite lors de la mise à jour de l\'événement.');
-              if (err instanceof HttpErrorResponse) {
-                if (err.status === 401 || err.status === 500) {
-                    this.router.navigate(['/login']);
-                }
-              }
-      }
+            this.update=res
+        }
+      
       );
+    }
+
+    back(): void {
+      window.history.back()
     }
   }
 
 
-  back(): void {
-    window.history.back()
-  }
+ 
 
 
-}
+

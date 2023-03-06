@@ -10,7 +10,7 @@
 
       <form >
         <div class="form-floating ">
-          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="nom"
+          <input type="text" pattern="[a-zA-Z0-9\-]+" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="nom"
           [(ngModel)]="inscriptionModel.nom">
           <label for="nom">Nom</label>
           
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-floating">
-          <input type="text" class="form-control " id="floatingPassword" placeholder="Numero de téléphone" name="numero"
+          <input type="text" pattern="[a-zA-Z0-9\-]+" class="form-control " id="floatingPassword" placeholder="Numero de téléphone" name="numero"
           [(ngModel)]="inscriptionModel.numero" >
           <label for="numero">Numero de téléphone</label>
 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-floating ">
-          <input type="text" class="form-control " id="floatingPassword" placeholder="Adresse" name="adresse"
+          <input type="text" pattern="[a-zA-Z0-9\-]+" class="form-control " id="floatingPassword" placeholder="Adresse" name="adresse"
           [(ngModel)]="inscriptionModel.adresse">
           <label for="adresse">Adresse</label>
         </div>

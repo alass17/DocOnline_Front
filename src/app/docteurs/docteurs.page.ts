@@ -10,7 +10,8 @@ import { SpecialiteService } from '../_services/specialite/specialite.service';
   styleUrls: ['./docteurs.page.scss'],
 })
 export class DocteursPage implements OnInit {
-
+  p:number=1
+  searchTerm!:string
   professionnels:any;
   specialites:any;
   idprof:any

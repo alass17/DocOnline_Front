@@ -5,9 +5,10 @@
 </ion-header>
 
 <ion-content>
-
+<ion-searchbar placeholder="recherche" [(ngModel)]="searchTerm" showCancelButton="focus"
+animated></ion-searchbar>
  <div class="container">
-  <ion-card  *ngFor="let prof of professionnels">
+  <ion-card  *ngFor="let prof of professionnels | paginate:{itemsPerPage:4,currentPage:p} |filter:searchTerm">
       <div class="row tt">
        
         <div class="col first " (click)="goToDetailsDocteur(prof.id)">
@@ -29,7 +30,9 @@
     </ion-card>
       
       
-     
+   <div class="pag">
+      <pagination-controls (pageChange)="p=$event" previousLabel="" nextLabel=""></pagination-controls>
+    </div>
         
       </div>
    

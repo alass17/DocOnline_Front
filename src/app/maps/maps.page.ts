@@ -83,7 +83,7 @@ console.log(longitude)
               const popupElement = popup.getElement();
               if (popupElement) {
                 popupElement.addEventListener('click', () => {
-                  this.router.navigate(['/prendrerdv']);
+                  this.router.navigate(['/prendrerdv',professionnel.id]);
                 });
               }
             }

@@ -11,6 +11,7 @@ import { DocteursService } from 'src/app/_services/docteur/docteurs.service';
 
 import { Geolocation } from '@capacitor/geolocation';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { AlerteService } from 'src/app/alerte.service';
 @Component({
   selector: 'app-inscriptionprof',
   templateUrl: './inscriptionprof.page.html',
@@ -74,7 +75,8 @@ options: NativeGeocoderOptions = {
 
   // constructor(private authService:AuthService,private docteurService:DocteursService) { }
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private http: HttpClient, private docteurService:DocteursService
-    ,private formBuilder: FormBuilder,private router: Router,private specialiteService:SpecialiteService, private nativeGeocoder: NativeGeocoder) {
+    ,private formBuilder: FormBuilder,private router: Router,private specialiteService:SpecialiteService, private nativeGeocoder: NativeGeocoder,
+    private alertService:AlerteService) {
 
   }
 
@@ -196,9 +198,21 @@ chargeImageProfil(evente: any){
       this.document,this.spec,this.userLatitude,this.userLongitude,this.inscriptionModel.biographie).subscribe(data =>{
       this.inscriptions=data;
       console.log(data)
-    })
-  }
 
+  this.alertService.presentToast(
+          "Inscription effectuée avec succès!!.",
+          "success"
+        );
+      }, error => {
+        console.log(error);
+        //Une alerte d'erreur
+        this.alertService.presentToast(
+          "Une erreur est survenu lors de l'inscription ...",
+          "danger"
+        );
+      })
+
+  }
 
 
   }

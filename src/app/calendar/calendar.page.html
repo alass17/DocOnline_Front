@@ -20,17 +20,19 @@
     <section class="today-box" id="today-box">
        <span class="breadcrumb">Vous avez [&nbsp;<b> {{ calendar.size }} </b> &nbsp;] rendez-vous.</span>
        <h3 class="date-title"> 
-          {{this.calendarForm.date}}
           <!-- {{ this.calendar.date }} -->
            <a (click)="previousDate(this.calendarForm.date)" style="cursor: pointer">
-                 <i class="fas fa-chevron-circle-left"></i>
+            <ion-icon name="chevron-back"></ion-icon>
            </a>
            &nbsp;
+
+            
+            {{this.calendarForm.date}}
            <a (click)="nextDay(this.calendarForm.date)" style="cursor: pointer">
-                 <i class="fas fa-chevron-circle-right"></i>
+                 <i class="fas fa-chevron-circle-right"></i><ion-icon name="chevron-forward"></ion-icon>
            </a>
  
-       </h3>
+         </h3>
         
        <div class="plus-icon">
           <i class="fa fa-plus"></i>

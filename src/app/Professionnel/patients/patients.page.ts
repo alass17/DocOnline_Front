@@ -14,6 +14,9 @@ import { StorageService } from 'src/app/_services/storage/storage.service';
   styleUrls: ['./patients.page.scss'],
 })
 export class PatientsPage implements OnInit {
+  searchTerm!:string
+  p:number=1
+
 
   user: any;
   mesrdv: any;

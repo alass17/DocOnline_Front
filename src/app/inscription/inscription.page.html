@@ -10,7 +10,7 @@
 
       <form class="" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
         <div class="form-floating ">
-          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="nom"
+          <input type="text" pattern="[a-zA-Z0-9\-]+" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="nom"
             [(ngModel)]="formInscription.nom" required  minlength="3" maxlength="20" #nom="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && nom.errors }"><div class="invalid-feedback" *ngIf="nom.errors && f.submitted">
               <div *ngIf="nom.errors['required']">Le nom est obligatoire</div>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-floating ">
-          <input type="text" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="numero"
+          <input type="text" pattern="[a-zA-Z0-9\-]+" class="form-control mb-3" id="floatingInput" placeholder="name@example.com" name="numero"
             [(ngModel)]="formInscription.numero" required  minlength="8" maxlength="20" #numero="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && numero.errors }"><div class="invalid-feedback" *ngIf="numero.errors && f.submitted">
               <div *ngIf="numero.errors['required']">Le nom est obligatoire</div>
@@ -107,7 +107,7 @@
         </div>
 
         <div class="form-floating ">
-          <input type="text" class="form-control " id="floatingPassword" placeholder="Adresse" name="adresse"
+          <input type="text" pattern="[a-zA-Z0-9\-]+" class="form-control " id="floatingPassword" placeholder="Adresse" name="adresse"
             [(ngModel)]="formInscription.adresse" required #adresse="ngModel"
             [ngClass]="{ 'is-invalid': f.submitted && adresse.errors }"><div class="invalid-feedback" *ngIf="adresse.errors && f.submitted">
               <div *ngIf="adresse.errors['required']">L'adresse est obligatoire</div>

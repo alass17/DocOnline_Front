@@ -7,7 +7,7 @@
 <ion-content>
 
  <div class="container">
-  <ion-card  *ngFor="let prof of patients">
+  <ion-card  *ngFor="let prof of patients | paginate:{itemsPerPage:4,currentPage:p}   |filter:searchTerm">
       <div class="row tt">
        
         <div class="col first " >
@@ -27,7 +27,9 @@
       </div>
   
     </ion-card>
-      
+    <div class="pag">
+      <pagination-controls (pageChange)="p=$event" previousLabel="" nextLabel=""></pagination-controls>
+    </div>
       
      
         

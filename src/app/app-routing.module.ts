@@ -15,27 +15,27 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  {
-    path: 'accueil',
-    loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
-  },
+  // {
+  //   path: 'accueil',
+  //   loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
+  // },
   {
     path: 'forgotpassword',
     loadChildren: () => import('./forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
   },
   
-  {
-    path: 'docteurs',
-    loadChildren: () => import('./docteurs/docteurs.module').then( m => m.DocteursPageModule)
-  },
-  {
-    path: 'rendezvous',
-    loadChildren: () => import('./rendezvous/rendezvous.module').then( m => m.RendezvousPageModule)
-  },
-  {
-    path: 'maps',
-    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
-  },
+  // {
+  //   path: 'docteurs',
+  //   loadChildren: () => import('./docteurs/docteurs.module').then( m => m.DocteursPageModule)
+  // },
+  // {
+  //   path: 'rendezvous',
+  //   loadChildren: () => import('./rendezvous/rendezvous.module').then( m => m.RendezvousPageModule)
+  // },
+  // {
+  //   path: 'maps',
+  //   loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+  // },
   
   {
     path: 'inscription',
@@ -68,21 +68,21 @@ const routes: Routes = [
     loadChildren: () => import('./Professionnel/inscriptionprof/inscriptionprof.module').then( m => m.InscriptionprofPageModule)
   },
   {
-    path: 'prendrerdv',
+    path: 'prendrerdv/:id',
     loadChildren: () => import('./prendrerdv/prendrerdv.module').then( m => m.PrendrerdvPageModule)
   },
-  {
-    path: 'accueil-prof',
-    loadChildren: () => import('./Professionnel/accueil-prof/accueil-prof.module').then( m => m.AccueilProfPageModule)
-  },
+  // {
+  //   path: 'accueil-prof',
+  //   loadChildren: () => import('./Professionnel/accueil-prof/accueil-prof.module').then( m => m.AccueilProfPageModule)
+  // },
   {
     path: 'tabsmedecin',
     loadChildren: () => import('./Professionnel/tabsmedecin/tabsmedecin.module').then( m => m.TabsmedecinPageModule)
   },
-  {
-    path: 'rendezvousprof',
-    loadChildren: () => import('./Professionnel/rendezvousprof/rendezvousprof.module').then( m => m.RendezvousprofPageModule)
-  },
+  // {
+  //   path: 'rendezvousprof',
+  //   loadChildren: () => import('./Professionnel/rendezvousprof/rendezvousprof.module').then( m => m.RendezvousprofPageModule)
+  // },
   {
     path: 'profilprof',
     loadChildren: () => import('./Professionnel/profilprof/profilprof.module').then( m => m.ProfilprofPageModule)

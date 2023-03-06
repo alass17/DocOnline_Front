@@ -1,5 +1,5 @@
 .row{
-    margin-top: 15%;
+    margin-top: 5%;
     margin-bottom: auto;
     width: 75%;
     height: 100px;
@@ -25,7 +25,7 @@
 ion-content{
     // ICI ON BLOCK LE SCROLLING
     --offset-bottom: auto!important;
-    background: #F8F6FB;
+    background: #FFFFFF;
   --overflow: hidden;
   overflow: auto;
   &::-webkit-scrollbar {
@@ -44,4 +44,17 @@ ion-content{
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
+  }
+
+  .retour {
+    margin-top: 50px;
+    margin-left: 15px;
+    color: black ;
+    border: none;
+
+
+  }
+
+  ion-icon{
+    font-size: 20px;
   }

@@ -8,6 +8,7 @@ import { RendezvousPageRoutingModule } from './rendezvous-routing.module';
 
 import { RendezvousPage } from './rendezvous.page';
 import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     IonicModule,
     RendezvousPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [RendezvousPage]
 })
